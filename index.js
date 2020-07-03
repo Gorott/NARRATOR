@@ -5,7 +5,6 @@ const bot = new Client({
 })
 const config = require('./config.json')
 const prefix = config.prefix;
-const token = config.token;
 const mongoose = require('mongoose')
 bot.commands = new Collection();
 bot.aliases = new Collection();
@@ -18,4 +17,4 @@ mongoose.connect("mongodb+srv://Groot:flapie123@cluster0.salt3.mongodb.net/data"
 ["command","event"].forEach(handler=>{
     require(`./handlers/${handler}`)(bot);
 });
-bot.login(token)
+bot.login(process.env.token)
