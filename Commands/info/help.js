@@ -1,6 +1,10 @@
 const Discord = require("discord.js");
 
-module.exports.run = async (bot, message, args) => {
+module.exports ={
+	name: "ping",
+	description: "???",
+	category: "info",
+	async (bot, message, args) => {
     //We have to set a argument for the help command beacuse its going to have a seperate argument.
     let helpArray = message.content.split(" ");
     let helpArgs = helpArray.slice(1);
@@ -35,7 +39,7 @@ module.exports.run = async (bot, message, args) => {
 
         message.channel.send(embed);
     }}
-}
+}}
 
 module.exports.config = {
     name: "help",
