@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 
 module.exports ={
-	name: "ping",
+	name: "help",
 	description: "???",
 	category: "info",
         run: async (bot, message, args)=>{
