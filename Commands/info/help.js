@@ -13,8 +13,8 @@ module.exports ={
      if(!helpArgs[0]) {
          var embed = new Discord.MessageEmbed()
              .setAuthor(`Here is the Avaible Commands to use:`)
-             .setDescription('```hi | hello | mute | unmute | addrole | removerole | embed | kick | ban```')
-             .addFields({ name: 'Prefix', value: '```?```', inline: true})
+             .setDescription('```ping```\n```help```\n```8ball```\n```announce```\n```timer```')
+             .addFields({ name: 'Prefix', value: '```=```', inline: true})
              .setColor('#00FFF3')
             
          message.channel.send(embed);
