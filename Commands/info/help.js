@@ -20,7 +20,7 @@ if(helpArgs[0]) {
 		.setColor(RANDOM)
 		
 		message.channel.send(embed);
-	)}
+	}}
 }
 
 module.exports.config = {
