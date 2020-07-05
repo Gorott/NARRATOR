@@ -4,7 +4,7 @@ module.exports ={
 	name: "ping",
 	description: "???",
 	category: "info",
-	async (bot, message, args)=>{
+        run: async (bot, message, args)=>{
      //We have to set a argument for the help command beacuse its going to have a seperate argument.
      let helpArray = message.content.split(" ");
      let helpArgs = helpArray.slice(1);
