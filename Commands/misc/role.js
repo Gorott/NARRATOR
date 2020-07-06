@@ -10,6 +10,6 @@ module.exports={
 		let member = message.member;
 	}
 
-    member.addRole("Members").catch(console.error)
+    member.roles.add("Members").catch(console.error)
     }
 }
