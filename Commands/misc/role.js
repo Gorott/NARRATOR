@@ -10,6 +10,6 @@ module.exports={
 		let member = message.member;
 	}
 
-    member.roles.add("Players").catch(console.error)
+    member.roles.add("728078042500431952").catch(console.error)
     }
 }
