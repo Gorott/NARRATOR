@@ -3,7 +3,6 @@
 module.exports={
 	name: "joingame",
 	description: "you can add a role with this",
-	usage: <role>,
 	catgory: "misc",
 	run:async(bot,message,args)=>{
 		if(!member.roles.cache.some(role => role.name === '@everyone') return message.channel.send("You do not have the role needed")
