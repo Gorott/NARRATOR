@@ -10,4 +10,5 @@ module.exports={
 	}
 
     member.addRole(Members).catch(console.error)
+    }
 }
