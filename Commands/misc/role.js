@@ -14,4 +14,4 @@ module.exports={
 			await aMember.addRole('728078042500431952')
 			
 	}
-}
+};
