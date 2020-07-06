@@ -8,7 +8,7 @@ module.exports={
 	if(message.member.roles.cache.has("@everyone")) {
 		let member = message.member;
 	}
-	if(message.guild.id === "728065941459435573") return message.channel.send ("You can only use that command in the game Server!")
+	if(message.guild.id === "728065941459435573") return;
     member.roles.add(728078042500431952).catch(console.error)
     }
 }
