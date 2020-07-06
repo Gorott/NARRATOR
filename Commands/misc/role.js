@@ -1,5 +1,4 @@
 ﻿const Discord = require('discord.js');
-const member = message.member;
 
 module.exports={
 	name: "joingame",
