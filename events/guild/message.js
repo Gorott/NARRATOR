@@ -2,8 +2,8 @@ const {prefix}= require('../../config.json');
 const Discord= require('discord.js');
 const client= new Discord.Client();
 module.exports=async(bot,message)=>{
-let command = Client.commands.get(commandName)
-                || Client.commands.find(cmd => cmd.aliases && cmd.aliases.include(commandName));
+let command = client.commands.get(commandName)
+                || client.commands.find(cmd => cmd.aliases && cmd.aliases.include(commandName));
 
           if (!command) return;
     if(message.author.bot) return;
