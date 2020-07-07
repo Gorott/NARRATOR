@@ -5,13 +5,13 @@ module.exports={
 	description: "you can add a role with this thing",
 	catgory: "misc",
 	run:async(bot,message,args)=>{
-	if(message.guild.id === "728065941459435573") return
+	if(message.guild.id === "728065941459435573") return;
     if(message.member.roles.cache.has("@everyone")) {
 		let member = message.member;
 	}
 	if(message.member.roles.cache.has("Spectator")) {
-		member.roles.remove(728078695025344514).catch(console.error)
+		member.roles.remove(729900329659007070).catch(console.error)
 		} else {
-    member.roles.add(728078042500431952).catch(console.error)
+    member.roles.add(729900329659007074).catch(console.error)
     }}
 }
