@@ -1,6 +1,6 @@
 const {prefix}= require('../../config.json')
 module.exports=async(bot,message)=>{
-    const command = client.commands.get(commandName)
+    const Secondcommand = client.commands.get(commandName)
                 || client.commands.find(cmd => cmd.aliases && cmd.aliases.include(commandName));
 
           if (!command) return;
