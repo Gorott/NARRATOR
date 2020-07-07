@@ -2,7 +2,7 @@ const {prefix}= require('../../config.json');
 const Discord= require('discord.js');
 const client= new Discord.Client();
 module.exports=async(bot,message)=>{
-let command = client.commands.get(cmd)
+let command = client.Commands.get(commandName)
                 || client.commands.find(cmd => cmd.aliases && cmd.aliases.include(commandName));
 
           if (!command) return;
