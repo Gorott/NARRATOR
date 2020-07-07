@@ -5,7 +5,8 @@ module.exports={
 	description: "you can add a role with this thing",
 	catgory: "misc",
 	run:async(bot,message,args)=>{
-	if(message.guild.id === "728065941459435573") return;
+	const member = message.member;
+        if(message.guild.id === "728065941459435573") return;
     if(message.member.roles.cache.has("@everyone")) {
 		let member = message.member;
 	}
