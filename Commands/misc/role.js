@@ -11,7 +11,7 @@ module.exports={
 		let member = message.member;
 	}
 	if(message.member.roles.cache.has("729900329659007070")) {
-		console.log('this is a existing role')
+                member.roles.remove("Spectator").catch(console.error)
 		} else {
     member.roles.add("Players").catch(console.error)
     }}
