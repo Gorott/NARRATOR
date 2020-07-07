@@ -13,4 +13,12 @@ bot.prefix = "=";
 ["command","event"].forEach(handler=>{
     require(`./handlers/${handler}`)(bot);
 });
+
+client.on('message', message => {
+          const command = client.commands.get(commandName)
+                || client.commands.find(cmd => cmd.aliases && cmd.aliases.include(commandName));
+
+          if (!command) return;
+};
 bot.login(process.env.token)
+
