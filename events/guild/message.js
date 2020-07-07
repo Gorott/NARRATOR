@@ -1,4 +1,5 @@
 const {prefix}= require('../../config.json')
+const discord = requirw('discord.js')
 module.exports=async(bot,message)=>{
 let command = Client.commands.get(commandName)
                 || Client.commands.find(cmd => cmd.aliases && cmd.aliases.include(commandName));
