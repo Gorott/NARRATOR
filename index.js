@@ -5,7 +5,7 @@ const bot = new Client({
 })
 const config = require('./config.json')
 const prefix = config.prefix;
-const command = client.commands.get(commandName)
+const command = Client.commands.get(commandName)
 		|| client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
           if (!command) return
 bot.commands = new Collection();
