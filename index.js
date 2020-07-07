@@ -14,7 +14,7 @@ bot.prefix = "=";
     require(`./handlers/${handler}`)(bot);
 });
 
-client.on('message', message => {
+Client.on('message', message => {
           const command = client.commands.get(commandName)
                 || client.commands.find(cmd => cmd.aliases && cmd.aliases.include(commandName));
 
