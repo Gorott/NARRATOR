@@ -1,5 +1,9 @@
 const {prefix}= require('../../config.json')
 module.exports=async(bot,message)=>{
+    const command = client.commands.get(commandName)
+                || client.commands.find(cmd => cmd.aliases && cmd.aliases.include(commandName));
+
+          if (!command) return;
     if(message.author.bot) return;
     if(!message.content.startsWith(prefix)) return;
     if(!message.guild) return;
