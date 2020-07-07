@@ -19,6 +19,6 @@ client.on('message', message => {
                 || client.commands.find(cmd => cmd.aliases && cmd.aliases.include(commandName));
 
           if (!command) return;
-};
+});
 bot.login(process.env.token)
 
