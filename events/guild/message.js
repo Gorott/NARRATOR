@@ -12,7 +12,7 @@ module.exports=async(bot,message)=>{
     if (typeof commands !== 'undefined') {
     let command = client.commands.get(commandName)
                 || client.commands.find(cmd => cmd.aliases && cmd.aliases.include(commandName));
-                {
+                }
           if (!command) return;
     command = bot.commands.get(cmd)
     if(command) command.run(bot,message,args)
