@@ -10,7 +10,7 @@ module.exports={
     if(message.member.roles.cache.has("@everyone")) {
 		let member = message.member;
 	}
-	if(message.member.roles.cache.has("Spectator")) {
+	if(message.member.roles.cache.has("729900329659007070")) {
 		member.roles.remove(729900329659007070).catch(console.error)
 		} else {
     member.roles.add(729900329659007074).catch(console.error)
