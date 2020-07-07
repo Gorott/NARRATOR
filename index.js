@@ -3,12 +3,12 @@ const fs = require('fs');
 const bot = new Client({
     dsableEveryone: true
 })
+const command = Client.Commands.get(commandName)
+		|| client.Commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
+          if (!command) return;
 const config = require('./config.json')
 const prefix = config.prefix;
 bot.commands = new Collection();
-const command = Client.Commands.get(commandName)
-		|| client.Commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
-          if (!command) return
 bot.aliases = new Collection();
 bot.categories = fs.readdirSync("./Commands/");
 const token = config.token;
