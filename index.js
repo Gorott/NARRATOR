@@ -6,8 +6,8 @@ const bot = new Client({
 const config = require('./config.json')
 const prefix = config.prefix;
 bot.commands = new Collection();
-const command = Client.command.get(commandName)
-		|| client.command.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
+const command = Client.Commands.get(commandName)
+		|| client.Commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
           if (!command) return
 bot.aliases = new Collection();
 bot.categories = fs.readdirSync("./Commands/");
