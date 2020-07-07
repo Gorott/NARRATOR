@@ -11,8 +11,8 @@ module.exports={
 		let member = message.member;
 	}
 	if(message.member.roles.cache.has("729900329659007070")) {
-		member.roles.remove(Spectator).catch(console.error)
+		member.roles.remove("Spectator").catch(console.error)
 		} else {
-    member.roles.add(Players).catch(console.error)
+    member.roles.add("Players").catch(console.error)
     }}
 }
