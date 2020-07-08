@@ -8,6 +8,7 @@ module.exports=async(bot,message)=>{
     if(!message.member) message.member = await message.guild.fetchMember(message);
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
     const commandName = args.shift().toLowerCase();
+    const cmd = args.shift().toLowerCase();
     if(cmd.length == 0 ) return;
     const command = bot.commands.get(commandName)
     || bot.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName))
