@@ -14,6 +14,7 @@ module.exports=async(bot,message)=>{
     || bot.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName))
     console.log(command)
     if(!command) return;
+    console.log(args)
     if(command) command.run(bot,message,args)
 };
 
