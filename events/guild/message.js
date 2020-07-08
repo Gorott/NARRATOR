@@ -8,9 +8,10 @@ module.exports=async(bot,message)=>{
     if(!message.member) message.member = await message.guild.fetchMember(message);
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
     const cmd = args.shift().toLowerCase();
+    const commandName = args.shift().toLowerCase();
     if(cmd.length == 0 ) return;
-    const command = bot.commands.get(cmd)
-    || bot.commands.find(cmd => cmd.aliases && cmd.aliases.includes(cmd))
+    const command = bot.commands.get(commandName)
+    || bot.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName))
     console.log(command)
     if(!command) return;
     if(command) command.run(bot,message,args)
