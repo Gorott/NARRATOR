@@ -10,7 +10,7 @@ module.exports=async(bot,message)=>{
     const cmd = args.shift().toLowerCase();
     if(cmd.length == 0 ) return;
     if (typeof command !== 'undefined') {
-    let command = bot.commands.get(cmd)
+    let command = client.commands.get(cmd)
     command = client.commands.get(commandName)
     || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName))
     console.log(command)
