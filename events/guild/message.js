@@ -9,7 +9,7 @@ module.exports=async(bot,message,commandName)=>{
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
     const cmd = args.shift().toLowerCase();
     if(cmd.length == 0 ) return;
-    command = bot.commands.get(commandName)
+    const command = bot.commands.get(commandName)
     || bot.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName))
     console.log(command)
     if(!command) return;
