@@ -1,6 +1,7 @@
 const {prefix}= require('../../config.json');
 const Discord= require('discord.js');
-module.exports=async(bot,message)=>{
+
+module.exports=async(bot,message,commandName)=>{
     if(message.author.bot) return;
     if(!message.content.startsWith(prefix)) return;
     if(!message.guild) return;
