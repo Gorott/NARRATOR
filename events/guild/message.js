@@ -9,13 +9,11 @@ module.exports=async(bot,message)=>{
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
     const cmd = args.shift().toLowerCase();
     if(cmd.length == 0 ) return;
-    if (typeof command !== 'undefined') {
     let command = client.commands.get(cmd)
     command = client.commands.get(commandName)
     || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName))
     console.log(command)
     if(!command) return;
-    }
     if(command) command.run(bot,message,args)
 };
 
