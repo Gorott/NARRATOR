@@ -13,6 +13,7 @@ module.exports=async(bot,message)=>{
     const command = bot.commands.get(cmd)
     || bot.commands.find(cmd => cmd.aliases && cmd.aliases.includes(cmd))
     console.log(command)
+    console.log(cmd)
     if(!command) return;
     if(command) command.run(bot,message,args)
 };
