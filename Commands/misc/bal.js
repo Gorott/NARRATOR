@@ -11,6 +11,6 @@ module.exports={
     let bal = await db.fetch(`money_${message.guild.id}_${message.author.id}`)
     if (bal === null) bal = 0;
     
-    message.channel.send(`${user} you have ${bal}:gold:!`)
+    message.channel.send(`${user} you have ${bal}:gold:737268058996998215 !`)
   }
 }
