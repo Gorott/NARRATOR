@@ -6,12 +6,6 @@ module.exports = {
     description: "edit the server link",
     catgory: "game",
     run: async (bot, message, args) => {
-
-      let link = db.fetch(`link`)
-
       db.set(`link`, args[0])
-
       message.channel.send(`Changed the link.`)
-
-
     }
