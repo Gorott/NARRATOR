@@ -4,17 +4,16 @@ const Discord= require('discord.js');
 module.exports=async(bot,message)=>{
     if(message.author.bot) return;
     if(!message.content.startsWith(prefix)) return;
-    if(!message.guild) return;
     if(!message.member) message.member = await message.guild.fetchMember(message);
+    if(!message.guild) return;
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
-    console.log(args)
     const cmd = args.shift().toLowerCase();
+    
     if(cmd.length == 0 ) return;
-    const command = bot.commands.get(cmd)
-    || bot.commands.find(cmd => cmd.aliases && cmd.aliases.includes(cmd))
-    console.log(command)
-    console.log(cmd)
-    if(!command) return;
+
+      let command = bot.commands.get(cmd);
+  if (!command) command = bot.commands.get(bot.aliases.get(cmd));
+
     if(command) command.run(bot,message,args)
 };
 
