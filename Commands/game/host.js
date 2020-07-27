@@ -10,7 +10,7 @@ module.exports = {
     let achannel = message.guild.channel.cache.get("728044277313306716");
     achannel.send(
       `<@&728035352098504736>`)
-    achannel.send(`An Challenge game is starting now\nGame Host: <@${message.author.id}>\nInvite Link: ${link}``
+    achannel.send(`An Challenge game is starting now\nGame Host: <@${message.author.id}>\nInvite Link: ${link}`
     );
   }
 }
