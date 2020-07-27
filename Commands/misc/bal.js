@@ -8,9 +8,9 @@ module.exports={
   run: async(bot,message,args)=>{
     let user = message.mentions.members.first || message.author;
     
-    let balance = await db.fetch(`money_${user.id}`)
-    if (money === null) money = 0;
+    let bal = await db.fetch(`money_${message.guild.id}_${message.author.id}`)
+    if (bal === null) bal = 0;
     
-    message.channel.send(`${user} you have ${money}!`)
+    message.channel.send(`${user} you have ${bal}!`)
   }
 }
