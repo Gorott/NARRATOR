@@ -3,7 +3,7 @@ const Discord = require ('discord.js')
 
 module.exports={
   name: "balance",
-  description: "check your balance"
+  description: "check your balance",
   aliases: ["bal"],
   run: async(bot,message,args)=>{
     let user = message.mentions.members.first || message.author;
