@@ -6,7 +6,7 @@ module.exports={
   description: "check your balance",
   aliases: ["bal"],
   run: async(bot,message,args)=>{
-    let user = message.mentions.members.first || message.author;
+    let user = message.mentions.members.first || message.member;
     
     let bal = await db.fetch(`money_${message.guild.id}_${message.author.id}`)
     if (bal === null) bal = 0;
