@@ -7,8 +7,8 @@ module.exports = {
     description: "check your balance.",
     run: async (bot, message, args) => {
 
-        const UserData = await client.models.user.findMyID(message.author.id)
-        if(!UserData) await client.models.user.create({ _id: message.author.id })
+        const UserData = await bot.models.user.findMyId(message.author.id)
+        if(!UserData) await bot.models.user.create({ _id: message.author.id })
 
         let money = userData.money
 
