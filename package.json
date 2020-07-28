@@ -1,21 +1,30 @@
 {
-  "name": "narratorbot",
+  "name": "NARRATOR",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gorott/NARRATOR.git"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gorott/NARRATOR/issues"
+  },
+  "homepage": "https://github.com/Gorott/NARRATOR#readme",
   "dependencies": {
     "ascii-table": "0.0.9",
     "discord.js": "^12.2.0",
     "dotenv": "^8.2.0",
-    "mongoose": "^5.9.21",
+    "mongoose": "^5.9.26",
     "ms": "^2.1.2",
     "parse-ms": "^2.1.0",
-    "quick.db": "^7.1.1"
+    "quick.db": "^7.1.1",
+    "quickdb": "^1.0.5"
   }
 }
