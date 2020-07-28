@@ -5,7 +5,7 @@ const bot = new Client({
 })
 const mongoose = require('mongoose')
 
-require('./Database/connect.js')
+require("./Database/connect.js")
 const config = require('./config.json')
 const prefix = config.prefix;
 bot.commands = new Collection();
@@ -17,8 +17,8 @@ bot.prefix = "=";
     require(`./handlers/${handler}`)(bot);
 });
 
-bot.models = { user: require ('./Database/models/money.js') }
-require('./Database/connect.js')
+bot.models = { user: require ("./Database/models/money.js") }
+require("./Database/connect.js")
 
 bot.login(process.env.token)
 

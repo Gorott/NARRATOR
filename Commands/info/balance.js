@@ -1,5 +1,5 @@
 const { MessageEmbed, Discord } = require('discord.js');
-const Money = require('../Database/models/money.js');
+const Money = require("../Database/models/money.js");
 
 module.exports = {
   name: 'balance',
