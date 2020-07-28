@@ -26,4 +26,3 @@ module.exports = {
       message.channel.send(memberInfo);
     }
   }
-}
