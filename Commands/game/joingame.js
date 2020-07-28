@@ -1,16 +1,19 @@
-﻿const Discord = require('discord.js')
+const Discord = require("discord.js");
+const db = require("quick.db");
 
-module.exports={
-	name: "joingame",
-	description: "you can add a role with this thing",
-	catgory: "misc",
-	run:async(bot,message,args)=>{
-	const member = message.member;
-    if(message.guild.id === "728065941459435573") return
-	if(message.member.roles.cache.has("729900329659007070")) {
-		member.roles.remove("729900329659007070").catch(console.error)
-		member.roles.add("729900329659007074").catch(console.error)
-                } else {
-    member.roles.add("729900329659007074").catch(console.error)
-    }}
-}
+module.exports = {
+  name: "joingame",
+  description: "to join a game",
+  catgory: "game",
+  run: async (bot, message, args) => {
+    if (message.guild.id != "729900329403154463") return;
+    let status = db.fetch(`status`);
+    if (status != "hosted") return;
+    if (message.member.roles.cache.has("729900329659007070")) {
+      message.member.roles.remove("729900329659007070").catch(console.error);
+      message.member.roles.add("729900329659007074").catch(console.error);
+    } else {
+      message.member.roles.add("729900329659007074").catch(console.error);
+    }
+  }
+};
