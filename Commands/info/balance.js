@@ -1,17 +1,28 @@
-const discord = require('discord.js');
+const { MessageEmbed, Discord } = require('discord.js');
+const Money = require('../Balance/models/money');
 
 module.exports = {
-    name: "balance",
-    category: "info",
-    aliases: ["bal"],
-    description: "check your balance.",
-    run: async (bot, message, args) => {
-
-        const UserData = await bot.models.user.findMyId(message.author.id)
-        if(!UserData) await bot.models.user.create({ _id: message.author.id })
-
-        let money = userData.money
-
-        message.channel.send(`You have ${money} coins!`)
+  name: 'balance',
+  description: Shows your balance,
+  aliases: [bal],
+  run: async(bot, message, args) => {
+    Money.findOne({
+      userID: message.author.id,
+      serverID: message.guild.id,
     }
+      const memberInfo = new MessageEmbed()
+        .setTitle(':moneybag: Balance Info')
+        .setAuthor(`${message.author.username}'s balance`, `${message.author.displayAvatarURL}`)
+        .setDescription('Participate in Adventure games, and win  to buy roles or additional ')
+
+      if (!money) {
+        memberInfo.addField('Total Coins', 0);
+      }
+      else {
+        memberInfo.addField('Total Coins', money.money);
+      };
+
+      message.channel.send(memberInfo);
+    });
+  }
 }
