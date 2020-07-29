@@ -11,7 +11,7 @@ module.exports = {
     }, (err, data) => {
       if(err) console.log(err);
       if(!data){
-        newD = new Money({
+        newD = new money({
           Cash: 0
         })
       } else {
