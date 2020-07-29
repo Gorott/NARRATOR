@@ -12,7 +12,7 @@ module.exports = {
     });
       const memberInfo = new MessageEmbed()
            .setTitle(':moneybag: Balance Info')
-           .setAuthor(`${message.author.username}'s balance`, `${message.author.displayAvatarURL}`)
+           .setAuthor(`${message.author.username}'s balance`, `${message.author.displayAvatarURL()}`)
            .setDescription('Participate in Adventure games, and win  to buy roles or additional ')
      
 
