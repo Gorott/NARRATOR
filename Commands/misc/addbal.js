@@ -23,6 +23,6 @@ module.exports = {
     
     const newcoins = await economy.addCoins(guildID, userID, coins)
     
-    message.reply(`You have given <@${userID}> ${coins} They now have ${newcoins} coins!`)
+    message.reply(`You have given <@${userID}> ${coins}<:gold:737268058996998215>!They now have ${newcoins}<:gold:737268058996998215>!`)
   }
 }
