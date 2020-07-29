@@ -20,7 +20,7 @@ module.exports = {
           Cash: 0
         })
       } else {
-        const embed = new MessageEmbed
+        const embed = new Discord.MessageEmbed()
         .setTitle("Balance Info") 
         .setDescription("Participate in Adventure games and win coins to buy roles or additional in game items.")
         .setAuthor(`${message.author.username}'s balance`, `${message.author.displayAvatarUrl()}`)
