@@ -1,12 +1,12 @@
 const economy = require('../../Database/models/economy')
-const { Discord, MessageEmbed } = require('discord.js')
+const {MessageEmbed} = require('discord.js')
 
 module.exports = {
   name: 'balance',
   description: 'Check your balance.',
   aliases: ["bal"],
   run: async (bot, message, args) => {
-    const embed = new Discord.MessageEmbed()
+    const embed = new MessageEmbed()
     .setTitle("Balance info")
     .setAuthor(`${message.author.username}'s balance`, `${message.author.displayAvatarUrl()}`)
     .setDescription("Participate in Adventure games and win coins to buy roles or additional in game items.")
