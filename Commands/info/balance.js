@@ -9,7 +9,10 @@ module.exports = {
     const target = message.author
     const targetId = target.id
     
-    const coins = await economy.getCoins(guildId, userId)
+    const guildID = message.guild.id
+    const userID = target.id 
+
+    const coins = await economy.getCoins(guildID, userID)
     const embed = new MessageEmbed()
     .setTitle("Balance info")
     .setAuthor(`${message.author.username}'s balance`, `${message.author.displayAvatarURL()}`)
