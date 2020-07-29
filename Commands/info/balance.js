@@ -6,6 +6,10 @@ module.exports = {
   description: 'Shows your balance',
   aliases: ["bal"],
   run: async (bot, message, args) => {
+      mongoose.connect ("mongodb+srv://Groot:flapie123@cluster0.fhmib.mongodb.net/test" ,{
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+    });
       money.findOne({
       id: message.author.id
     }, (err, data) => {
