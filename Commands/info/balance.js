@@ -8,7 +8,7 @@ module.exports = {
   run: async (bot, message, args) => {
     const embed = new MessageEmbed()
     .setTitle("Balance info")
-    .setAuthor(`${message.author.username}'s balance`, `${message.author.displayAvatarUrl()}`)
+    .setAuthor(`${message.author.username}'s balance`, `${message.author.displayAvatarURL()}`)
     .setDescription("Participate in Adventure games and win coins to buy roles or additional in game items.")
     .addFields(
           { name: 'Total Coins', value: `You have ${coins} coins!`})
