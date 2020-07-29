@@ -15,8 +15,5 @@ bot.prefix = "=";
     require(`./handlers/${handler}`)(bot);
 });
 
-bot.models = { user: require ("./Database/models/money") }
-require("./Database/connect")
-
 bot.login(process.env.token)
 
