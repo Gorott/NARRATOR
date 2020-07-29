@@ -9,7 +9,7 @@ const profileSchema = mongoose.Schema({
   guildID: reqString,
   userID: reqString,
   coins: {
-    type: number,
+    type: Number,
     required: true
   }
 })
