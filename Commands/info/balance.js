@@ -16,11 +16,11 @@ module.exports = {
            .setDescription('Participate in Adventure games, and win  to buy roles or additional ')
      
 
-      if (!money) {
+      if (!Money) {
         memberInfo.addField('Total Coins', 0);
       }
       else {
-        memberInfo.addField('Total Coins', money.money);
+        memberInfo.addField('Total Coins', Money.Money);
       };
 
       message.channel.send(memberInfo);
