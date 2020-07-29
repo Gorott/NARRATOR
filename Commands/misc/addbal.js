@@ -5,7 +5,7 @@ module.exports = {
   description: "add coins to a specfic person",
   aliases: ["add, addbalance"],
   run: async (bot, message, args) => {
-    const mention = message.mentions.user.first()
+    const mention = message.mentions.users.first()
     
     if(!mention) {
       message.reply ('Please tag a person to add coins to.')
