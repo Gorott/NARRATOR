@@ -20,13 +20,13 @@ module.exports = {
           Cash: 0
         })
       } else {
-        let embed = new Discord.MessageEmbed()
+        const embed = new MessageEmbed
         .setTitle("Balance Info") 
         .setDescription("Participate in Adventure games and win coins to buy roles or additional in game items.")
         .setAuthor(`${message.author.username}'s balance`, `${message.author.displayAvatarUrl()}`)
         .addFields(
           { name: 'Total Coins', value: data.cash})
-          message.channel.send(embed)
+          message.channel.send(embed);
         
         
         
