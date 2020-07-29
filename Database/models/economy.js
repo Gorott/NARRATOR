@@ -1,4 +1,4 @@
-const mongo = require('../mongo')
+const mongo = require('../../mongo')
 const profileSchema = require('./profile')
 
 module.exports = (bot) => {}
