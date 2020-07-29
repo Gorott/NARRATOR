@@ -1,35 +1,22 @@
-const { MessageEmbed, Discord } = require('discord.js');
-const money = require('../../Database/models/money');
-const mongoose = require('mongoose');
+const economy = require('../../Database/models/economy')
+const { Discord, MessageEmbed } = require('discord.js')
 
 module.exports = {
   name: 'balance',
-  description: 'Shows your balance',
+  description: 'Check your balance.',
   aliases: ["bal"],
   run: async (bot, message, args) => {
-      mongoose.connect ("mongodb+srv://Groot:flapie123@cluster0.fhmib.mongodb.net/test" ,{
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-    });
-      money.findOne({
-      id: message.author.id
-    }, (err, data) => {
-      if(err) console.log(err);
-      if(!data){
-        newD = new money({
-          Cash: 0
-        })
-      } else {
-        const embed = new Discord.MessageEmbed()
-        .setTitle("Balance Info") 
-        .setDescription("Participate in Adventure games and win coins to buy roles or additional in game items.")
-        .setAuthor(`${message.author.username}'s balance`, `${message.author.displayAvatarUrl()}`)
-        .addFields(
-          { name: 'Total Coins', value: data.cash})
-          message.channel.send(embed);
-        
-        
-        
-    }
-  });
-}}
+    const embed = new Discord.MessageEmbed()
+    .setTitle("Balance info")
+    .setAuthor(`${message.author.username}'s balance`, `${message.author.displayAvatarUrl()}`)
+    .setDescription("Participate in Adventure games and win coins to buy roles or additional in game items.")
+    .addFields(
+          { name: 'Total Coins', value: `You have ${coins} coins!`})
+          
+    const target = message.author
+    const targetId = target.id
+    
+    const coins = await economy.getCoins(guildID, userID)
+    message.channel.send(embed);
+  }
+}
