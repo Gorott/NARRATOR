@@ -12,7 +12,7 @@ module.exports = {
       .members;
     if (playerrole.size != args.length) {
       return message.channel.send(
-        `<@${message.author.id}, you gave ${args.length} roles for ${playerrole.size} players...`
+        `<@${message.author.id}> you gave ${args.length} roles for ${playerrole.size} players...`
       );
     }
     ///A game cannot start with less than 4 players.
