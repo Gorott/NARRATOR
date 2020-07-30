@@ -18,7 +18,7 @@ module.exports = {
       return
     }
     
-    const coinsOwned = await economy.getCoins(guild.id, member.id)
+    const coinsOwned = await economy.getCoins(guildID, memberID)
     if (coinsOwned < coinsToGive) {
       message.reply(`You do not have ${coinsToGive} coins!`)
       return
