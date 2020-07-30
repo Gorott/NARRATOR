@@ -48,8 +48,8 @@ module.exports.getCoins = async (guildID, userID) => {
       console.log('Running findOne()')
 
       const result = await profileSchema.findOne({
-        guildId,
-        userId,
+        guildID,
+        userID,
       })
 
       let coins = 0
