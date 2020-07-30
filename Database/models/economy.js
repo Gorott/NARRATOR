@@ -52,7 +52,7 @@ module.exports.getCoins = async (guildID, userID) => {
         userID,
       })
 
-      let coins = 0
+      let coins = > 0
       if (result) {
         coins = result.coins
       } else {
