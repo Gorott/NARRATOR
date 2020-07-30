@@ -1,4 +1,4 @@
-const economy = ('../../Database/models/economy')
+const economy = ('../../Database/models/economy.js')
 
 module.exports = {
   name: "pay",
