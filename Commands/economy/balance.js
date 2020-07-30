@@ -18,6 +18,9 @@ module.exports = {
     .setTitle ('How to get coins and what can you do with coins?')
     .setDescription ('You can earn coins by playing adventure games with those coins you can buy aditional items or roles')
     .setAuthor (`${message.author.username}'s balance`, `${message.author.displayAvatarURL()}`)
+    .addFields (
+      {name: "Total Coins:", value: `You have ${coins} coins!`}
+    )
     message.channel.send(embed)
   }
 }
