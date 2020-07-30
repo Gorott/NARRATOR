@@ -15,13 +15,12 @@ module.exports = {
     const userID = target.id
     
     const coinsToGive = args[1]
-    if (isNaN(coinsToGive)) {
+    if (isNaN(coinsToGive || coinsToGive < 1)) {
       message.reply('Please provide a valid number of coins to give.')
       return
     }
     
     const coinsOwned = await economy.getCoins(guildID, userID)
-    
     if (coinsOwned < coinsToGive) {
       message.reply(`You need ${coinsToGive}<:gold:737268058996998215>!`)
       return
