@@ -1,6 +1,8 @@
 const mongo = require('../../mongo')
 const profileSchema = require('./profile')
 
+const coinsCache = {} // { ' guildID-userID': coins }
+
 module.exports = (bot) => {}
 
 module.exports.addCoins = async (guildID, userID, coins) => {
@@ -26,6 +28,8 @@ module.exports.addCoins = async (guildID, userID, coins) => {
     
     console.log('RESULT:', result)
     
+    coinsCache[`${guildID}-${userID}`] = result.coins
+    
     return result.coins
     } finally {
       mongoose.connection.close()
@@ -34,6 +38,10 @@ module.exports.addCoins = async (guildID, userID, coins) => {
 }
 
 module.exports.getCoins = async (guildID, userID) => {
+  const cachedValue = coinsCache[`${guildID}-${userID}`]
+  if (cachedValue) {
+    return cachedValue
+  }
   return await mongo().then(async (mongoose) => {
     try {
       console.log('Running findOne()')
@@ -55,7 +63,9 @@ module.exports.getCoins = async (guildID, userID) => {
           userID,
           coins,
         }).save()
-      }
+        
+        
+        coinsCache[`${guildID}-${userID}`] = coins
       
       return coins
     } finally {
