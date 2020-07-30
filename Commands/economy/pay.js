@@ -31,7 +31,11 @@ module.exports = {
       userID,
       coinsToGive * -1
     )
-    const newBalance = await economy.addCoins(guildID, targetID, coinsToGive)
+    const newBalance = await economy.addCoins(
+      guildID, 
+      targetID, 
+      coinsToGive
+      )
     
     const embed = new MessageEmbed()
     .setTitle ('Transaction Successfully Completed ')
