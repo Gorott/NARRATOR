@@ -15,7 +15,7 @@ module.exports = {
     const userID = target.id
     
     const coinsToGive = args[1]
-    if (isNaN(coinsToGive) || coinsToGive < 1) {
+    if (isNaN(coinsToGive)) {
       message.reply('Please provide a valid number of coins to give.')
       return
     }
@@ -30,7 +30,7 @@ module.exports = {
     const remainingCoins = await economy.addCoins(
       guildID,
       userID,
-      coinsToGive * 1
+      coinsToGive * -1
     )
     const newBalance = await economy.addCoins(guildID, userID, coinsToGive)
     
