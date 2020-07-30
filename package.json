@@ -25,6 +25,7 @@
     "ms": "^2.1.2",
     "parse-ms": "^2.1.0",
     "quick.db": "^7.1.1",
-    "quickdb": "^1.0.5"
+    "quickdb": "^1.0.5",
+    "shuffle-array": "^1.0.1"
   }
 }
