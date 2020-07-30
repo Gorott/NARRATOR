@@ -4,7 +4,7 @@ const { MessageEmbed } = require('discord.js')
 module.exports = {
   name: "pay",
   description: "pay someone coins",
-  run async (bot, message, args) => {
+  run: async (bot, message, args) => {
     const target = message.mentions.users.first()
     const targetID = target.id
     if (!target) {
