@@ -36,7 +36,7 @@ module.exports = {
     
     const embed = new MessageEmbed()
     .setTitle ('Transaction Successfully Completed ')
-    .setDescription (`You payed coins to: <@${targetID}>`\n `You payed: ${coinsToGive}<:gold:737268058996998215>`\n `They now have: ${newBalance}<:gold:737268058996998215>`\n `You had: ${coinsOwned}<:gold:737268058996998215>`\n `You now have: ${remainingCoins}<:gold:737268058996998215>`)
+    .setDescription (`You payed coins to: <@${targetID}>\n You payed: ${coinsToGive}<:gold:737268058996998215>\n They now have: ${newBalance}<:gold:737268058996998215>\n You had: ${coinsOwned}<:gold:737268058996998215>\n You now have: ${remainingCoins}<:gold:737268058996998215>`)
     
     message.channel.send(embed)
   }
