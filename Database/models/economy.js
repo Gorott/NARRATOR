@@ -59,7 +59,7 @@ module.exports.getCoins = async (guildID, userID) =>{
           coins,
         }).save()
       }
-    }
+    
       
       return coins
     } finally {
