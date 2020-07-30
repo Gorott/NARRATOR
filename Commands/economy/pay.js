@@ -7,35 +7,32 @@ module.exports = {
     const { guild, member } = message
     
     const target = message.mentions.users.first()
-    if(!target) {
-      message.reply('Please specify a person to give coins to.')
+    if (!target) {
+      message.reply('Please specify someone to give coins to.')
       return
     }
     
-    const coinsToGive = args[1]
+    const coinsToGive = arguments[1]
     if (isNaN(coinsToGive)) {
-      message.reply('Please provide a valid number of coins to give to that person.')
-    return
+      message.reply('Please provide a valid number of coins to give.')
+      return
     }
     
-    const coinsOwned = await economy.getCoins(guild.ID, member.ID)
+    const coinsOwned = await economy.getCoins(guild.id, member.id)
     if (coinsOwned < coinsToGive) {
-      message.reply(`you do not have ${coinsToGive} coins`)
+      message.reply(`You do not have ${coinsToGive} coins!`)
       return
     }
     
     const remainingCoins = await economy.addCoins(
-      guild.ID,
-      member.ID,
+      guild.id,
+      member.id,
       coinsToGive * -1
     )
-      
-    const newBalance = await economy.addCoins (
-      guild.ID,
-      member.ID,
-      coinsToGive
+    const newBalance = await economy.addCoins(guild.id, target.id, coinsToGive)
+    
+    message.reply(
+      `You have given <@${target.id}> ${coinsToGive} coins! They now have ${newBalance} coins and you have ${remainingCoins} coins!`
     )
-      
-    message.reply(`You have given <@${target.id}> ${coinsToGive} coins! They now have ${newBalance} coins! You have ${remainingCoins} coins!`)
-  }
+  },
 }
