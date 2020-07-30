@@ -3,7 +3,7 @@ const profileSchema = require('./profile')
 
 
 
-module.exports = (client) => {}
+module.exports = (bot) => {}
 
 module.exports.addCoins = async (guildID, userID, coins) => {
   return await mongo().then(async (mongoose) => {
