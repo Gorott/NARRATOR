@@ -37,7 +37,7 @@ module.exports.addCoins = async (guildID, userID, coins) => {
   })
 }
 
-module.exports.getCoins = async (guildID, userID) => {}
+module.exports.getCoins = async (guildID, userID) =>{
 
   return await mongo().then(async (mongoose) => {
     try {
@@ -59,7 +59,7 @@ module.exports.getCoins = async (guildID, userID) => {}
           coins,
         }).save()
       }
-
+    }
       
       return coins
     } finally {
