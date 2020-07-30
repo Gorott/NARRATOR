@@ -7,7 +7,7 @@ module.exports = {
   run: async (bot, message, args) => {
     const mention = message.mentions.users.first()
     if (message.member.roles.cache.has('728035124935000105') || message.member.roles.cache.has('728519448637735012') || message.member.roles.cache.has('728035012137713754'))
-
+    return;
     if(!mention) {
       message.reply ('Please tag a person to add coins to.')
       return
