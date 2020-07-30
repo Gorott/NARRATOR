@@ -14,7 +14,7 @@ const guildID = message.guild.id
 const userID = target.id
 
 const coinsToGive = args[1]
-if (isNaN(coinsToGive)) {
+if (isNaN(coinsToGive) || coinsToGive < 1) {
 message.reply('Please provide a valid number of coins to give.')
 return
 }
