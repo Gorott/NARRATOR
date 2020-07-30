@@ -1,5 +1,5 @@
 const economy = require('../../Database/models/economy.js')
-
+const { MessageEmbed } = require('discord.js')
 module.exports = {
   name: "pay",
   description: "pay someone a certain amount of coins.",
