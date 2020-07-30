@@ -18,21 +18,21 @@ module.exports = {
     return
     }
     
-    const coinsOwned = await economy.getCoins(guild.id, member.id)
+    const coinsOwned = await economy.getCoins(guild.ID, member.ID)
     if (coinsOwned < coinsToGive) {
       message.reply(`you do not have ${coinsToGive} coins`)
       return
     }
     
     const remainingCoins = await economy.addCoins(
-      guild.id,
-      member.id,
+      guild.ID,
+      member.ID,
       coinsToGive * -1
     )
       
     const newBalance = await economy.addCoins (
-      guild.id,
-      member.id,
+      guild.ID,
+      member.ID,
       coinsToGive
     )
       
