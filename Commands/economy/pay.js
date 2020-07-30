@@ -30,7 +30,7 @@ module.exports = {
     const remainingCoins = await economy.addCoins(
       guildID,
       userID,
-      coinsToGive * -1
+      coinsToGive * 1
     )
     const newBalance = await economy.addCoins(guildID, userID, coinsToGive)
     
