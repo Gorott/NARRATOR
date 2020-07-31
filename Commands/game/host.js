@@ -6,7 +6,6 @@ module.exports = {
   description: "to host",
   catgory: "game",
   run: async (bot, message, args) => {
-    if (message.channel.id != "729900329944088600") return;
     let link = db.fetch(`link`);
     let achannel = message.guild.channels.cache.get("728044277313306716");
     const embed = new MessageEmbed()
