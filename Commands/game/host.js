@@ -14,8 +14,7 @@ module.exports = {
       .setDescription(
         `Game Host: <@${message.author.id}>\nInvite Link: ${link}`
       );
-    achannel.send(`<@&728035352098504736>`);
-    achannel.send(embed);
+    achannel.send(`<@&728035352098504736>`, {embed: embed});
     db.set(`status`, `hosted`);
   }
 };
