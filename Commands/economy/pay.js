@@ -33,7 +33,7 @@ const newBalance = await economy.addCoins(guild.id, target.id, coinsToGive)
  
  const embed = new MessageEmbed()
  .setTitle('Transaction Complete!')
- .setDescription(`You Had: ${coinsOwned}<:gold:737268058996998215> \n You gave: ${coinsToGive}<:gold:737268058996998215> \n You now have: ${remainingCoins}<:gold:737268058996998215> \n ${target.username} now has: ${newBalance}<:gold:737268058996998215>`)
+ .setDescription(`You had: ${coinsOwned} <:gold:737268058996998215> \n You gave: ${coinsToGive} <:gold:737268058996998215> \n You now have: ${remainingCoins} <:gold:737268058996998215> \n ${target.username} now has: ${newBalance} <:gold:737268058996998215>`)
  
  message.channel.send(embed)
 
