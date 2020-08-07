@@ -21,7 +21,6 @@ return
 }
 
 const coinsOwned = await economy.getCoins(guildID, userID)
-
 if (coinsOwned < coinsToGive) {
 message.reply(`You do not have ${coinsToGive} coins!`)
 return
