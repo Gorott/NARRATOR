@@ -13,10 +13,10 @@ module.exports = {
       }
       if (message.guild.id != "728031033949290636") return;
       if (message.channel.id != "728072732516024360") {
-          return message.channel.send(`${message.author.id} Please use this command in <#728072732516024360>!`);
+          return message.channel.send(`<@${message.author.id}> Please use this command in <#728072732516024360>!`);
       }
 
-      if (message.member.role.cache.has("741097460486897664")) {
+      if (message.member.roles.cache.has("741097460486897664")) {
           return message.channel.send("You already have the Game Joined role!");
       }
 
