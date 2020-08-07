@@ -30,7 +30,7 @@ member.id,
 coinsToGive * -1
 )
 const newBalance = await economy.addCoins(guild.id, target.id, coinsToGive)
- const embed = MessageEmbed()
+ const embed = new MessageEmbed()
  .setTitle = "Transaction Complete!"
  .setDescription = `You Had: ${coinsOwned}`/n `You gave: ${coinsToGive}` /n `You now have: ${remainingCoins}` /n `${member.username} now has: ${newBalance}`
  
