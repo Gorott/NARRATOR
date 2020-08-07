@@ -1,4 +1,4 @@
-const economy = require('../../Database/models/economy.js')
+const economy = require('../../Database/models/economy')
 const { MessageEmbed } = require('discord.js')
 
 module.exports = {
