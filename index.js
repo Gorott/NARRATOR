@@ -1,7 +1,7 @@
 const {Collection, Client, Discord} = require('discord.js');
 const fs = require('fs');
 const bot = new Client({
-    dsableEveryone: true
+    disableEveryone: true
 })
 const mongoose = require('mongoose');
 const config = require('./config.json')
@@ -16,4 +16,3 @@ bot.prefix = "=";
 });
 
 bot.login(process.env.token)
-
