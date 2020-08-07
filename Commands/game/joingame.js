@@ -20,8 +20,8 @@ module.exports = {
           return message.channel.send("You already have the Game Joined role!");
       }
 
-      if (args[0] === `link`) {
-          message.members.role.add("741097460486897664");
+      if (args[0] === link) {
+          message.members.roles.add("741097460486897664");
           message.channel.send("You joined the game go to <#741098289847468082>")
       } else {
           message.channel.send("Please provide a link.")
