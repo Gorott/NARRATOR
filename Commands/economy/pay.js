@@ -5,14 +5,12 @@ module.exports = {
 name: "pay",
 description: "pay someone a certain amount of coins.",
 run: async (bot, message, args) => {
+  const { guild, member } = message
 const target = message.mentions.users.first()
-const targetID = target.id
 if (!target) {
 message.reply('Please specify someone to give coins to.')
 return
 }
-const guildID = message.guild.id
-const userID = target.id
 
 const coinsToGive = args[1]
 if (isNaN(coinsToGive) || coinsToGive < 1) {
@@ -20,22 +18,24 @@ message.reply('Please provide a valid number of coins to give.')
 return
 }
 
-const coinsOwned = await economy.getCoins(guildID, userID)
-
+const coinsOwned = await economy.getCoins(guild.id, member.id)
 if (coinsOwned < coinsToGive) {
 message.reply(`You do not have ${coinsToGive} coins!`)
 return
 }
 
 const remainingCoins = await economy.addCoins(
-guildID,
-userID,
+guild.id,
+member.id,
 coinsToGive * -1
 )
-const newBalance = await economy.addCoins(guildID, targetID, coinsToGive)
+const newBalance = await economy.addCoins(guild.id, target.id, coinsToGive)
+ 
+ const embed = new MessageEmbed()
+ .setTitle('Transaction Complete!')
+ .setDescription(`You had: ${coinsOwned} <:gold:737268058996998215> \n You gave: ${coinsToGive} <:gold:737268058996998215> \n You now have: ${remainingCoins} <:gold:737268058996998215> \n ${target.username} now has: ${newBalance} <:gold:737268058996998215>`)
+ 
+ message.channel.send(embed)
 
-message.reply(
-`You have given <@${target.id}> ${coinsToGive} coins! They now have ${newBalance} coins and you have ${remainingCoins} coins!`
-)
 },
 }
