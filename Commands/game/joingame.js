@@ -3,40 +3,28 @@ const db = require("quick.db");
 
 module.exports = {
   name: "joingame",
-  description: "to join a game",
+  description: "to join a game from the server",
   catgory: "game",
   run: async (bot, message, args) => {
-    let status = db.fetch(`status`);
-    if (status != "hosted") return;
-    if (message.guild.id != "729900329403154463") return;
-    if (message.channel.id != "729900329667133459") {
-      return message.channel.send(
-        `<@${message.author.id}>, this command can only be use in <#729900329667133459>.`
-      );
-    }
+      let status = db.fetch(`status`);
+      let link = db.fetch(`link`)
+      if (status != "hosted" || "started") {
+        return message.channel.send("That game already ended") 
+      }
+      if (message.guild.id != "728031033949290636") return;
+      if (message.channel.id != "728072732516024360") {
+          return message.channel.send(`${message.author.id} Please use this command in <#728072732516024360>!`);
+      }
 
-    if (message.member.roles.cache.has("729900329659007070")) {
-      message.member.roles.remove("729900329659007070").catch(console.error);
-      message.member.roles.add("729900329659007074").catch(console.error);
-    } else {
-      message.member.roles.add("729900329659007074").catch(console.error);
-    }
+      if (message.member.role.cache.has("741097460486897664")) {
+          return message.channel.send("You already have the Game Joined role!");
+      }
 
-    let playerrole = message.guild.roles.cache.get("729900329659007074")
-      .members;
-
-    let playernumber = Math.floor(playerrole.size + 1);
-
-    if (playernumber > 12) {
-      return message.channel.send(
-        `<@${message.author.id}>, there are already 12 players in this game. Type \`=spectate\` to spectate.`
-      );
-    }
-
-    message.member.setNickname(playernumber);
-
-    let role = message.guild.roles.cache.find(r => r.name === playernumber);
-
-    message.member.roles.add(role);
+      if (args[0] === `link`) {
+          message.members.role.add("741097460486897664");
+          message.channel.send("You joined the game go to <#741098289847468082>")
+      } else {
+          message.channel.send("Please provide a link.")
+      }
   }
-};
+}
