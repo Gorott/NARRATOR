@@ -6,7 +6,6 @@ module.exports = {
   description: "to change a status",
   catgory: "game",
   run: async (bot, message, args) => {
-    if (message.channel.id != "729900329944088600") return;
     let status = db.fetch(`status`);
     if (args[0] === `hosted` || `started` || `ended`) {
       db.set(`status`, args[0]);
