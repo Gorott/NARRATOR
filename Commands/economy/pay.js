@@ -5,6 +5,7 @@ module.exports = {
 name: "pay",
 description: "pay someone a certain amount of coins.",
 run: async (bot, message, args) => {
+  const { guild, member } = messahe
 const target = message.mentions.users.first()
 if (!target) {
 message.reply('Please specify someone to give coins to.')
@@ -17,7 +18,7 @@ message.reply('Please provide a valid number of coins to give.')
 return
 }
 
-const coinsOwned = await economy.getCoins(guild.id, user.id)
+const coinsOwned = await economy.getCoins(guild.id, member.id)
 if (coinsOwned < coinsToGive) {
 message.reply(`You do not have ${coinsToGive} coins!`)
 return
@@ -25,7 +26,7 @@ return
 
 const remainingCoins = await economy.addCoins(
 guild.id,
-user.jd,
+member.id,
 coinsToGive * -1
 )
 const newBalance = await economy.addCoins(guild.id, target.id, coinsToGive)
