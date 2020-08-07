@@ -6,7 +6,7 @@ module.exports = {
   description: "Clear channels in the game server",
   catgory: "game",
   run: async (bot, message, args) => {
-    if (message.guild.id != "729900329403154463") return;
+    if (message.guild.id != "728065941459435573") return;
     let status = db.fetch(`status`);
     if (status !== "ended") return;
     let number = parseInt(args[0])
