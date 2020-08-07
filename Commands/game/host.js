@@ -12,7 +12,7 @@ module.exports = {
       .setTitle("New game starting!")
       .setColor("#007167")
       .setDescription(
-        `Game Host: <@${message.author.id}>\nInvite Link: [Click!](${link})`
+        `Use =joingame ${link} in <#728072732516024360>!`
       );
     achannel.send(`<@&728035352098504736>`, {embed: embed});
     db.set(`status`, `hosted`);
