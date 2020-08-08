@@ -21,7 +21,7 @@ module.exports = {
         `<@${message.author.id}, there are less than 4 players...`
       );
     }
-    let roles = args;
+    let roles = shuffle(args);
     let i;
     for (i = 0; i < roles.length; i++) {
       //For example, "role_1" would be "seer".
