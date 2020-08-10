@@ -8,7 +8,7 @@ module.exports = {
   run: async (bot, message, args) => {
       if (message.guild.id != "728031033949290636") return;
       let status = db.fetch(`status`);
-      let link = d.fetch(`link`)
+      let link = db.fetch(`link`)
       if (status !== "ended") {
         return message.channel.send("That game hasn't ended yet! Set the game to ended with `=status ended` first") 
       }
