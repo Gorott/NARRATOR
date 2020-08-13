@@ -12,8 +12,9 @@ module.exports = {
       .setTitle("New game starting!")
       .setColor("#007167")
       .setDescription(
-        `Use =joingame ${link} in <#728072732516024360>!`
-      );
+        `Use the following command in <#728072732516024360>!\n` +
+        `\`\`\`fix\n=joingame ${link}\n\`\`\``
+      )
     achannel.send(`<@&728035352098504736>`, {embed: embed});
     db.set(`status`, `hosted`);
   }
