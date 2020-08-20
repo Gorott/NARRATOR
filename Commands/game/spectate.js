@@ -16,10 +16,10 @@ module.exports = {
       message.channel.send(
         `<@${message.author.id}>, please also ping the Host to remove your number role.`
       );
-      message.member.setNickname(Lazyyy Spectatorzz)
+      message.member.setNickname('Lazyyy Spectatorzz');
     } else {
       message.member.roles.add("728078695025344514").catch(console.error);
-      message.member.setNickname(Lazyyy Spectatorzz)
+      message.member.setNickname('Lazyyy Spectatorzz');
     }
   }
 };
