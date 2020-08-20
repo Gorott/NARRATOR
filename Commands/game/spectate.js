@@ -6,7 +6,7 @@ module.exports = {
   description: "to spectate a game",
   catgory: "game",
   run: async (bot, message, args) => {
-    if (message.guild.id != "729900329403154463") return;
+    if (message.guild.id != "728065941459435573") return;
     let status = db.fetch(`status`);
     if (status === "ended") return;
     if (message.member.roles.cache.has("728078042500431952")) {
