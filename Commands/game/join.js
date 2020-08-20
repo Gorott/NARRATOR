@@ -32,7 +32,7 @@ module.exports = {
 
     message.member.setNickname(playernumber);
 
-    let role = message.guild.roles.cache.find(r => r.name === "playernumber");
+    let role = message.guild.roles.cache.find(r => r.name === `${playernumber}`);
     message.member.roles.add(role);
   } 
 };
