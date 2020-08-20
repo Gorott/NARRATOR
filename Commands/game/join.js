@@ -9,11 +9,6 @@ module.exports = {
     let status = db.fetch(`status`);
     if (status != "hosted") return;
     if (message.guild.id != "728065941459435573") return;
-    if (message.channel.id != "741100898935111702") {
-      return message.channel.send(
-        `<@${message.author.id}>, this command can only be use in <#741100898935111702>.`
-      );
-    }
 
     if (message.member.roles.cache.has("728078695025344514")) {
       message.member.roles.remove("728078695025344514").catch(console.error);
