@@ -1,3 +1,8 @@
+var express = require('express');
+var app = express();
+app.get("/", (request, response) => {
+  response.sendStatus(200);
+})
 const {Collection, Client, Discord} = require('discord.js');
 const fs = require('fs');
 const bot = new Client({
