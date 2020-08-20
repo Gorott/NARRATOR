@@ -1,8 +1,13 @@
 var express = require('express');
 var app = express();
 app.get("/", (request, response) => {
-  response.sendStatus(200);
+  response.send('Hello World!');
 })
+
+function keepAlive(){
+    app.listen(3000, ()=>{console.log("Server is Ready!")});
+}
+
 const {Collection, Client, Discord} = require('discord.js');
 const fs = require('fs');
 const bot = new Client({
@@ -19,5 +24,5 @@ bot.prefix = "=";
 ["command","event"].forEach(handler=>{
     require(`./handlers/${handler}`)(bot);
 });
-
+keepAlive();
 bot.login(process.env.token)
