@@ -3,9 +3,8 @@ const ms = require('parse-ms');
 const db = require('quick.db');
 
 module.exports = {
-    name: "bal",
-    description: "Check your balance",
-    aliases: ["balance"],
+    name: "daily",
+    description: "claim your daily coins",
     run: async (bot, message, args) => {
         let timeout = 86400000
         let amount = 10
