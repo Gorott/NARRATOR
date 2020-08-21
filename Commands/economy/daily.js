@@ -10,7 +10,7 @@ module.exports = {
         let timeout = 86400000
         let amount = 10
         let daily = await db.fetch(`daily_${message.author.id}`);
-        let coins = await db.fetch(`coins_${user.id}`)
+        let coins = await db.fetch(`coins_${message.author.id}`)
         let newCoins = (coins + amount)
 
         if (daily != null && timeout - (Date.now() - daily) > 0) {
