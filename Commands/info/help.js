@@ -13,9 +13,9 @@ module.exports ={
      if(!helpArgs[0]) {
          var embed = new Discord.MessageEmbed()
              .setAuthor(`Here is the Avaible Commands to use:`)
-             .setDescription('```help | ping | announce | timer | 8ball |```')
-             .addFields({ name: 'Prefix', value: '```=```', inline: true})
-             .setColor('#00FFF3')
+             .setDescription('`help | ping | announce | timer | 8ball | bal | buy | shop | pay | inventory | daily `')
+             .addFields({ name: 'Prefix', value: '`=`', inline: true})
+             .setColor('#RANDOM')
             
          message.channel.send(embed);
      }
@@ -30,10 +30,9 @@ module.exports ={
              var embed = new Discord.MessageEmbed()
              .setAuthor(`${command.config.name} Command`)
              .setDescription(`
-             - **Command's Description** __${command.config.description || "There is no Description for this command."}__
-             - **Command's Usage:** __${command.config.usage || "No Usage"}__
-             - **Command's Permissions:** __${command.config.accessableby || "Members"}__
-             - **Command's Aliases:** __${command.config.aliases || "No Aliases"}__
+             - **Command's Description** ${command.config.description || "There is no Description for this command."}
+             - **Command's Usage:** ${command.config.usage || "No Usage"}
+             - **Command's Aliases:** ${command.config.aliases || "No Aliases"}
              `)
              .setColor('#2EFF00')
 
@@ -43,7 +42,7 @@ module.exports ={
 }
 module.exports.config = {
     name: "help",
-    description: "",
+    description: "use this command if you need to know how a command works",
     usage: "=help",
     aliases: []
 }

@@ -37,3 +37,11 @@ module.exports={
         }
     }
 }
+
+module.exports.config = {
+    name: "8ball",
+    description: "Make the bot answer your question",
+    usage: "=8ball <question>",
+    aliases: []
+}
+

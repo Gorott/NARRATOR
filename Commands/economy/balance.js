@@ -14,10 +14,18 @@ module.exports = {
     const embed = new MessageEmbed()
     .setTitle ('How to get coins and what can you do with coins?')
     .setDescription ('You can earn coins by playing adventure games with those coins you can buy aditional items or roles')
-    .setAuthor (`${message.author.username}'s balance`, `${message.author.displayAvatarURL()}`)
+    .setAuthor (`${user.username}'s balance`, `${user.displayAvatarURL()}`)
     .addFields (
       {name: "Total Coins:", value: `You have ${coins} <:gold:737268058996998215>!`}
     )
     message.channel.send(embed)
   }
 }
+
+module.exports.config = {
+    name: "bal",
+    description: "check your or someone else his balance",
+    usage: "=balance <ping user>",
+    aliases: ['balance']
+}
+

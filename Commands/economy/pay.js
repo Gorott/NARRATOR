@@ -1,40 +1,39 @@
-const { MessageEmbed } = require('discord.js')
+const { MessageEmbed } = require('discord.js');
+const db = require('quick.db');
 
 module.exports = {
 name: "pay",
 description: "pay someone a certain amount of coins.",
 run: async (bot, message, args) => {
-  const { guild, member } = message
+  let coins = db.fetch(`coins_${message.author.id}`)
 const target = message.mentions.users.first()
 if (!target) {
 message.reply('Please specify someone to give coins to.')
-return
+return;
 }
 
-const coinsToGive = args[1]
-if (isNaN(coinsToGive) || coinsToGive < 1) {
-message.reply('Please provide a valid number of coins to give.')
-return
+if(!args[1]) {
+  message.reply('Please specify an amount.')
+  return;
 }
 
-const coinsOwned = await economy.getCoins(guild.id, member.id)
-if (coinsOwned < coinsToGive) {
-message.reply(`You do not have ${coinsToGive} coins!`)
-return
+if(coins < args[1]) {
+  return message.channel.send('You don\'t have enough coins get some more coins first')
 }
-
-const remainingCoins = await economy.addCoins(
-guild.id,
-member.id,
-coinsToGive * -1
-)
-const newBalance = await economy.addCoins(guild.id, target.id, coinsToGive)
- 
  const embed = new MessageEmbed()
  .setTitle('Transaction Complete!')
- .setDescription(`You had: ${coinsOwned} <:gold:737268058996998215> \n You gave: ${coinsToGive} <:gold:737268058996998215> \n You now have: ${remainingCoins} <:gold:737268058996998215> \n ${target.username} now has: ${newBalance} <:gold:737268058996998215>`)
+ .setDescription(`You had: ${coins} <:gold:737268058996998215> \n You gave: ${args[1]} <:gold:737268058996998215> to ${target.username}`)
  
  message.channel.send(embed)
+ db.add(`coins_${target.id}`, args[1])
+ db.subtract(`coins_${message.author.id}`, args[1])
 
 },
+}
+
+module.exports.config = {
+    name: "pay",
+    description: "pay someone an amount of coins",
+    usage: "=pay <ping user> <amount>",
+    aliases: []
 }

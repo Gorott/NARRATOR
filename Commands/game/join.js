@@ -34,5 +34,6 @@ module.exports = {
 
     let role = message.guild.roles.cache.find(r => r.name === `${playernumber}`);
     message.member.roles.add(role);
+    message.delete()
   } 
 };

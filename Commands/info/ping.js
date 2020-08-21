@@ -12,3 +12,10 @@ module.exports={
         msg.edit(Embed)
     }
 }
+
+module.exports.config = {
+    name: "ping",
+    description: "check the latency of the bot",
+    usage: "=ping",
+    aliases: []
+}

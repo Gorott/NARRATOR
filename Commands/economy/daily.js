@@ -27,3 +27,12 @@ module.exports = {
         }
     }
 }
+
+
+
+module.exports.config = {
+    name: "daily",
+    description: "daily claim 10 coins.",
+    usage: "=daily",
+    aliases: []
+}
