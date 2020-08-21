@@ -1,4 +1,4 @@
-const economy = require('../../Database/models/economy')
+const db = require(`quick.db`);
 
 module.exports = {
   name: "addbal",
@@ -12,19 +12,16 @@ module.exports = {
       message.reply ('Please tag a person to add coins to.')
       return
     }
-    
-    const coins = args[1]
+    let balance = db.fetch(`coins_${message.author.id}`)
+    let coins = args[1]
     if (isNaN(coins)) {
       message.reply('please provide a valid ammount of coins.')
       return
     }
     
-    const guildID = message.guild.id
-    const userID = mention.id
-    
-    const newcoins = await economy.addCoins(guildID, userID, coins)
-    
-    message.reply(`You have given <@${userID}> ${coins}<:gold:737268058996998215>!They now have ${newcoins}<:gold:737268058996998215>!`)
+    let newCoins = balance + coins
+    message.reply(`You have given <@${user.id}> ${coins}<:gold:737268058996998215>!They now have ${newcoins}<:gold:737268058996998215>!`)
+    db.add(`coins_${message.author.id}`, coins)
     }
   }
 }

@@ -1,4 +1,4 @@
-const economy = require('../../Database/models/economy.js')
+const db = require('quick.db')
 const { MessageEmbed } = require('discord.js')
 
 module.exports = {
@@ -6,13 +6,10 @@ module.exports = {
   description: "Check your balance",
   aliases: ["balance"],
   run: async (bot, message, args) => {
-    const target = message.author
-    const targetID = target.id
-    
-    const guildID = message.guild.id
-    const userID = target.id
-    
-    const coins = await economy.getCoins(guildID, userID)
+    let user = message.mentions.users.first() || message.author
+    let coins = db.fetch(`coins_${user.id}`)
+
+    if (coins === null) coins = 0
     
     const embed = new MessageEmbed()
     .setTitle ('How to get coins and what can you do with coins?')
