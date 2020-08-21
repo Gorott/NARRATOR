@@ -20,7 +20,13 @@ module.exports={
                 "Most Likely",
                 "Outlook good",
                 "Yes",
-                "Signs point to yes"
+                "Signs point to yes",
+                "NO U",
+                "Ask your friend",
+                "Google can help you",
+                "Unfortunately, NO!",
+                "Why?",
+                "Nah..."
             ]
             let Response = responses[Math.floor(Math.random()*(responses.length))]
             let Embed = new MessageEmbed()
