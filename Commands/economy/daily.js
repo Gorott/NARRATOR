@@ -19,7 +19,7 @@ module.exports = {
         } else {
             let embed = new MessageEmbed()
             .setTitle('**Daily Coins**')
-            .setDescription(`You had: ${coins} \n You now have ${newCoins}`)
+            .setDescription(`You had: ${coins} <:gold:737268058996998215>\n You now have ${newCoins} <:gold:737268058996998215>`)
             message.channel.send(embed)
 
             db.add(`coins_${message.author.id}`, amount)

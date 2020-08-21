@@ -14,13 +14,12 @@ module.exports = {
     }
     let balance = db.fetch(`coins_${message.author.id}`)
     let coins = args[1]
+    if(!coins) message.reply('Please specify an amount to add')
     if (isNaN(coins)) {
       message.reply('please provide a valid ammount of coins.')
       return
     }
-    
-    let newCoins = balance + coins
-    message.reply(`You have given <@${user.id}> ${coins}<:gold:737268058996998215>!They now have ${newcoins}<:gold:737268058996998215>!`)
+    message.reply(`You have given <@${mention.id}> ${coins} <:gold:737268058996998215>!They now have ${balance} <:gold:737268058996998215>!`)
     db.add(`coins_${message.author.id}`, coins)
     }
   }
