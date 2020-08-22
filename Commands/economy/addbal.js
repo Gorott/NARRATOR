@@ -20,7 +20,7 @@ module.exports = {
       return
     }
 
-    db.add(`coins_${mention.id}`, coins)
+    db.add(`coins_${mention.id}_${message.guild.id}`, coins)
     message.reply(`You have given ${mention.username} ${coins} <:gold:737268058996998215>!`)
     }
   }

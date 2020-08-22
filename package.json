@@ -19,14 +19,14 @@
   "homepage": "https://github.com/Gorott/NARRATOR#readme",
   "dependencies": {
     "ascii-table": "0.0.9",
+    "better-sqlite3": "^7.1.0",
     "discord.js": "^12.2.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "mongoose": "^5.9.26",
     "ms": "^2.1.2",
     "parse-ms": "^2.1.0",
-    "quick.db": "^7.1.1",
-    "quickdb": "^1.0.5",
+    "quick.db": "^7.0.0-b21",
     "shuffle-array": "^1.0.1"
   }
 }

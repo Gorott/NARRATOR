@@ -5,7 +5,7 @@ module.exports={
     usage: "<channel id | name> <msg>",
     run: async(bot,message,args)=>{
         let msg;
-        let textchannel = message.mentions.channels.first()
+        let textchannel = message.mentions.channels.first() 
         if(message.member.hasPermission(['MANAGE_MESSAGES']))
         if(!args[0]) return message.channel.send(`You didn't gave me an announcement to send.`)
         if(!textchannel) return message.channel.send(`You didn't mention a channel.`)

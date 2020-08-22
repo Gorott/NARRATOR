@@ -5,7 +5,7 @@ module.exports = {
 name: "pay",
 description: "pay someone a certain amount of coins.",
 run: async (bot, message, args) => {
-  let coins = db.fetch(`coins_${message.author.id}`)
+  let coins = db.fetch(`coins_${message.author.id}_${message.guild.id}`)
 const target = message.mentions.users.first()
 if (!target) {
 message.reply('Please specify someone to give coins to.')
@@ -25,8 +25,8 @@ if(coins < args[1]) {
  .setDescription(`You had: ${coins} <:gold:737268058996998215> \n You gave: ${args[1]} <:gold:737268058996998215> to ${target.username}`)
  
  message.channel.send(embed)
- db.add(`coins_${target.id}`, args[1])
- db.subtract(`coins_${message.author.id}`, args[1])
+ db.add(`coins_${target.id}_${message.guild.id}`, args[1])
+ db.subtract(`coins_${message.author.id}_${message.guild.id}`, args[1])
 
 },
 }

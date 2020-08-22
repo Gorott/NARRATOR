@@ -7,7 +7,7 @@ module.exports = {
   aliases: ["balance"],
   run: async (bot, message, args) => {
     let user = message.mentions.users.first() || message.author
-    let coins = db.fetch(`coins_${user.id}`)
+    let coins = db.fetch(`coins_${user.id}_${message.guild.id}`)
 
     if (coins === null) coins = 0
     
