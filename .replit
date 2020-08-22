@@ -1,2 +1,2 @@
 language = "nodejs"
-run = " npm install better-sqlite3"
+run = "node index.js"
