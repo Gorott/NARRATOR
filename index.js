@@ -13,7 +13,7 @@ const fs = require('fs');
 const bot = new Client({
     disableEveryone: true
 })
-const mongoose = require('mongoose');
+
 const config = require('./config.json')
 const prefix = config.prefix;
 bot.commands = new Collection();
