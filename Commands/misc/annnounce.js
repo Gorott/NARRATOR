@@ -7,7 +7,7 @@ module.exports={
         let msg;
         let textchannel = message.mentions.channels.first()
         if(message.member.hasPermission(['MANAGE_MESSAGES']))
-        if(!msg) return message.channel.send(`You didn't gave me an announcement to send.`)
+        if(!args[0]) return message.channel.send(`You didn't gave me an announcement to send.`)
         if(!textchannel) return message.channel.send(`You didn't mention a channel.`)
 
         message.delete()
