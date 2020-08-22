@@ -1,3 +1,5 @@
+//Credit for most of this code goes to LuciferianThomas#0666
+
 const db = require(`quick.db`);
 const Discord = require(`discord.js`);
 
