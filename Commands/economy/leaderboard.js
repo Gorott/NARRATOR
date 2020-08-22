@@ -8,7 +8,14 @@ module.exports = {
   description: "Check the sever's leaderboard",
   aliases: ["lb"],
   run: async (bot, message, args) => {
-    args = ["coins"];
+    //future expansion into other currencies or lb values
+    //if (args[0] && !["xp","roses","coins"].includes(args[0].toLowerCase()))
+    //  return await message.channel.send("Invalid input. Accepted values: `xp`, `roses`, `coins`.")
+    
+    //if (!args.length) args[0] = 'xp'
+    
+    args = ["coins"]
+    
     let allPlayers = db.all().map((x) => {
       if (typeof x.data == "string") x.data = JSON.parse(x.data);
       let data = {};
@@ -29,10 +36,11 @@ module.exports = {
       if (a.nickname.toLowerCase() > b.nickname.toLowerCase()) return 1;
       else if (a.nickname.toLowerCase() < b.nickname.toLowerCase()) return -1;
     });
+    
+    let embeds = []
 
     for (var [i, player] of sortedPlayers.entries()) {
-      if (i % 10 == 0)
-        embeds.push(new Discord.MessageEmbed().setDescription(""));
+      if (i % 10 == 0) embeds.push(new Discord.MessageEmbed().setDescription(""))
       // if(player[args[0].toLowerCase()] == 0 || player[args[0].toLowerCase()] == undefined) continue;
       embeds[embeds.length - 1].description += `${
         i == 0
@@ -41,25 +49,29 @@ module.exports = {
           ? ":second_place: "
           : i == 2
           ? ":third_place: "
-          : `\`${i + 1}\` `
-      }${player.nickname}${player.id == message.author.id ? " (**you**)" : ""}${
-        args[1] && args[1].toLowerCase() == "debug" ? ` (\`${player.id}\`)` : ""
-      } [\`${player[args[0].toLowerCase()] || 0}\`]\n`;
+          : `\`${i+1}\` `
+    }${player.nickname}${player.id == message.author.id ? " (**you**)" : ""}${args[1] && args[1].toLowerCase() == "debug" ? ` (\`${player.id}\`)` : ""} [\`${player[args[0].toLowerCase()] || 0}\`]\n`
     }
-
+    
     for (var [i, embed] of embeds.entries()) {
       embed
         .setTitle(
-          `Coins Leaderboard (#${i * 10 + 1}-#${Math.min(
+          `${
+            args[0].toLowerCase() == "xp"
+              ? "XP"
+              : `${args[0].toUpperCase()}${args[0].slice(1).toLowerCase()}`
+          } Leaderboard (#${i * 10 + 1}-#${Math.min(
             (i + 1) * 10,
             sortedPlayers.length
           )})`
         )
         .setFooter(
-          `Page ${i + 1}/${
-            embeds.length
-          } | Sorted in descending order by coins.`
-        );
+          `Page ${i + 1}/${embeds.length} | Sorted in descending order by ${
+            args[0].toLowerCase() == "xp"
+              ? "XP"
+              : args[0].toLowerCase()
+          }.`
+        )
     }
   },
 };
