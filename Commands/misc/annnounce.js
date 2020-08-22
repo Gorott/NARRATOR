@@ -6,7 +6,7 @@ module.exports={
     run: async(bot,message,args)=>{
         let rChannel = message.guild.channels.cache.get(args[0])
         if (message.member.hasPermission(["EMBED_LINKS"]))
-        if(!rChannel)return message.channel.send(`You did not specify your channel to send the announcement too.`)
+        if(!rChannel)return message.channel.send(`You did not specify your channel to send the announcement to.`)
         let MSG = message.content.split(`${bot.prefix}announce ${rChannel.id} `).join("")
         if(!MSG)return message.channel.send(`You did not specify your message to send!`)
         const _ = new MessageEmbed()

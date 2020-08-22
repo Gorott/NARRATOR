@@ -12,10 +12,10 @@ module.exports = {
       if (status !== "ended") {
         return message.channel.send("That game hasn't ended yet! Set the game to ended with `=status ended` first") 
       }
-      let mem = message.guild.members.cache.filter(x => x.roles.cache.has("741097460486897664"))
+      let mem = message.guild.members.cache.filter(x => x.roles.cache.get("741097460486897664"))
       mem.forEach(x => {
         x.roles.remove("741097460486897664")
       })
-      message.channel.send("Done! I have removed the role from " + mem.array.length + " members.")
+      message.channel.send("Done! I have removed the role from " + mem.size + " members.")
   }
 }
