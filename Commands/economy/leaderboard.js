@@ -14,8 +14,8 @@ module.exports = {
       let data = {};
       data.coins = x.data;
       data.id = x.ID.replace("coins_", "").replace(`_${message.guild.id}`, "");
-      data.nickname = client.users.cache.get(x.ID)
-        ? `${client.users.cache.get(data.id).username}`
+      data.nickname = bot.users.cache.get(x.ID)
+        ? `${bot.users.cache.get(data.id).username}`
         : `Unknown User: ${data.id}`;
       return data;
     });
