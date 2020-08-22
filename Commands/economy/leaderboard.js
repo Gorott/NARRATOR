@@ -56,11 +56,7 @@ module.exports = {
     for (var [i, embed] of embeds.entries()) {
       embed
         .setTitle(
-          `${
-            args[0].toLowerCase() == "xp"
-              ? "XP"
-              : `${args[0].toUpperCase()}${args[0].slice(1).toLowerCase()}`
-          } Leaderboard (#${i * 10 + 1}-#${Math.min(
+          `Coins Leaderboard (#${i * 10 + 1}-#${Math.min(
             (i + 1) * 10,
             sortedPlayers.length
           )})`
