@@ -16,12 +16,12 @@ module.exports = {
     
     args = ["coins"]
     
-    let allPlayers = db.all().map((x) => {
+    let allPlayers = db.all().filter(x => x.ID.startsWith("coins")).map((x) => {
       if (typeof x.data == "string") x.data = JSON.parse(x.data);
       let data = {};
       data.coins = x.data;
       data.id = x.ID.replace("coins_", "").replace(`_${message.guild.id}`, "");
-      data.nickname = bot.users.cache.get(x.ID)
+      data.nickname = bot.users.cache.get(data.id)
         ? `${bot.users.cache.get(data.id).username}`
         : `Unknown User: ${data.id}`;
       return data;
