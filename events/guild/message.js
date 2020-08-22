@@ -11,9 +11,30 @@ module.exports=async(bot,message)=>{
     
     if(cmd.length == 0 ) return;
 
-      let command = bot.commands.get(cmd);
-  if (!command) command = bot.commands.get(bot.aliases.get(cmd));
+    let command = bot.commands.get(cmd);
+    if (!command) command = bot.commands.get(bot.aliases.get(cmd));
 
-    if(command) command.run(bot,message,args)
+    if(!command) return
+    
+try {
+    await command.run(bot,message,args)
+} catch (error) {
+    console.error(error)
+    await bot.channels.cache.get("746825240499191939").send(
+    new Discord.MessageEmbed()
+    .setDescription(
+    `An error occured when ${message.author} attempted the following command: \`${
+      message.content.replace(/(`)/g, "\$1")
+    }\``
+  )
+  .addField(
+    "Error Description",
+    `\`\`\`${error.stack}\`\`\``
+  )
+)
+
+await message.channel.send(`❌ An error occurred when trying to execute this command. Please contact a member of the Bot Development Team.`)
+}
+    
 };
 
