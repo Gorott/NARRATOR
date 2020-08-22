@@ -73,6 +73,9 @@ module.exports = {
           }.`
         )
     }
+    
+    let m = await message.channel.send(embeds[0])
+    paginator(message.author.id, m, embeds, 0)
   },
 };
 
