@@ -38,6 +38,8 @@ module.exports = {
     collector.on('end', collected3 => {
       console.log(`Collected ${collected3.size} 3️⃣`);
       let random = collected3.size
+let result = Math.max('classic', 'sandbox', 'random')
+    console.log(result)
     });
     
     let result = Math.max('classic', 'sandbox', 'random')
