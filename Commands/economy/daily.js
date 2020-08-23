@@ -22,7 +22,7 @@ module.exports = {
             .setDescription(`You had: ${coins} <:gold:737268058996998215>\n You now have ${newCoins} <:gold:737268058996998215>`)
             message.channel.send(embed)
 
-            db.add(`coins_${message.author.id}`, amount)
+            db.add(`coins_${message.author.id}_${message.guild.id}`, amount)
             db.add(`daily_${message.author.id}`, Date.now())
         }
     }

@@ -5,7 +5,7 @@ module.exports = {
     name: "buy",
     description: "buy an item.",
     run: async (bot, message, args) => {
-      let user = db.fetch(`coins_${message.author.id}`)
+      let user = db.fetch(`coins_${message.author.id}_${message.guild.id}`)
 
       if(!args[0]) {
         message.channel.send('What do you want to buy?')
@@ -18,7 +18,7 @@ module.exports = {
           let items = db.fetch(message.author.id, { items: [] })
           db.push(message.author.id, "- Special Role")
           message.channel.send("You've succesfully bought a Special Role make sure to ping a Moderator+ to activate it")
-          db.subtract(`coins_${message.author.id}`, 200)
+          db.subtract(`coins_${message.author.id}_${message.guild.id}`, 200)
           
         }
       }
@@ -30,7 +30,7 @@ module.exports = {
           let items = db.fetch(message.author.id, { items: [] })
           db.push(message.author.id, "- Custom Role Pass")
           message.channel.send("You've succesfully bought the Custom Role Pass")
-          db.subtract(`coins_${message.author.id}`, 1000)
+          db.subtract(`coins_${message.author.id}_${message.guild.id}`, 1000)
           
         }
       }
@@ -42,7 +42,7 @@ module.exports = {
           let items = db.fetch(message.author.id, { items: [] })
           db.push(message.author.id, "- Private Channel")
           message.channel.send("You've succesfully bought a Private Channel make sure to ping a Manager+ to create it for you")
-          db.subtract(`coins_${message.author.id}`, 1500)
+          db.subtract(`coins_${message.author.id}_${message.guild.id}`, 1500)
           
         }
       }
