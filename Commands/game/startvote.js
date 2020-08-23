@@ -40,7 +40,7 @@ module.exports = {
       let random = collected3.size
     });
     
-    let result = Math.max(classic, sandbox, random)
+    let result = Math.max('classic', 'sandbox', 'random')
     console.log(result)
   }
 }
