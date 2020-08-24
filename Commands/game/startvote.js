@@ -19,6 +19,5 @@ module.exports = {
     
     let cSandbox = reactions.get(Sandbox).count-1
     console.log(cSandbox)
-    console.log(reactions.keyArray())
   }
 }
