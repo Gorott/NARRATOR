@@ -18,10 +18,10 @@ module.exports = {
       let role = message.guild.roles.cache.find(r => r.name === `${playernumber}`);
       message.member.roles.remove(role);
       
-      message.member.setNickname('Lazyyy Spectatorzz');
+      message.member.setNickname('Not Very Lazy Spectatorzz');
     } else {
       message.member.roles.add("728078695025344514").catch(console.error);
-      message.member.setNickname('Lazyyy Spectatorzz');
+      message.member.setNickname('Not Very Lazy Spectatorzz');
       message.delete()
     }
   }
