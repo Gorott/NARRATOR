@@ -16,5 +16,8 @@ module.exports = {
     
     const reactions = await msg.awaitReactions(reaction => reaction.emoji.name === Sandbox  || reaction.emoji.name === Classic || reaction.emoji.name === Random, {time: 15000});
     message.channel.send('Voting Complete!')
+    
+    let cSandbox = reactions.get(Sandbox).count-1;
+    console.log(cSandbox)
   }
 }
