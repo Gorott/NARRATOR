@@ -1,7 +1,7 @@
 const db = require('quick.db');
-const Sandbox = "1️⃣";
-const Classic = "2️⃣";
-const Random = "3️⃣";
+const Sandbox = bot.emoji.find(find => emoji.name === "one")
+const Classic = bot.emoji.find(find => enoji.name === "two")
+const Random =  bot.emoji.find(find => emoji.name === "three")
 
 
 module.exports = {
