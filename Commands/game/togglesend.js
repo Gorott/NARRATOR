@@ -6,7 +6,8 @@ module.exports = {
   description: "Toggle the send messages and add reactions perms for a role in the game server",
   catgory: "game",
   run: async (bot, message, args) => {
-    if(!message.member.roles.cache.find(x => x.name === "Host") return message.channel.send("Only a game host can do that!")
+    const host = message.member.roles.cache.find(x => x.name === "Host")
+    if(!host) return message.channel.send("Only a game host can do that!")
     let role = message.mentions.roles.first()
     if(!role) role = message.guild.roles.cache.get(args[0])
     if(!role) role = message.guild.roles.cache.find(x => x.name === args[0])
