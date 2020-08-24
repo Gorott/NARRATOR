@@ -1,7 +1,5 @@
 const db = require('quick.db');
-const Sandbox = bot.emoji.find(find => emoji.name === "one")
-const Classic = bot.emoji.find(find => enoji.name === "two")
-const Random =  bot.emoji.find(find => emoji.name === "three")
+
 
 
 module.exports = {
@@ -9,6 +7,9 @@ module.exports = {
   description: "start voting.",
   category: "game",
   run: async (bot, message, args) => {
+const Sandbox = bot.emoji.find(find => emoji.name === "one")
+const Classic = bot.emoji.find(find => enoji.name === "two")
+const Random =  bot.emoji.find(find => emoji.name === "three")
     let msg = await message.channel.send(`Sandbox, Classic or Random?`)
     await msg.react(Sandbox);
     await msg.react(Classic);
