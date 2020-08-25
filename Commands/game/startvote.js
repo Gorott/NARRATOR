@@ -7,9 +7,9 @@ module.exports = {
   description: "start voting.",
   category: "game",
   run: async (bot, message, args) => {
-const Sandbox = bot.emojis.find(emoji => emoji.find === "one")
-const Classic = bot.emojis.find(emoji => emoji.find === "two")
-const Random =  bot.emojis.find(emoji => emoji.find === "three")
+const Sandbox = "1️⃣";
+const Classic = "2️⃣";
+const Random =  "3️⃣";
     let msg = await message.channel.send(`Sandbox, Classic or Random?`)
     await msg.react(Sandbox);
     await msg.react(Classic);
@@ -20,5 +20,9 @@ const Random =  bot.emojis.find(emoji => emoji.find === "three")
     
     let cSandbox = reactions.get(Sandbox).count-1
     console.log(cSandbox)
+    let cClassic = reactions.get(Classic).count-1
+    console.log(cClassic)
+    let cRandom = reactions.get(Random).count-1
+    console.log(cRandom)
   }
 }
