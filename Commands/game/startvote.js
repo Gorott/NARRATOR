@@ -24,5 +24,7 @@ const Random =  "3️⃣";
     console.log(cClassic)
     let cRandom = reactions.get(Random).count-1
     console.log(cRandom)
+    let result = Math.max(cSandbox, cClassic, cRandom)
+    console.loy(result)
   }
 }
