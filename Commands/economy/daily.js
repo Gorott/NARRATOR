@@ -13,7 +13,7 @@ module.exports = {
         let newCoins = (coins + amount)
 
         if (daily !== null && timeout - (Date.now() - daily) > 0) {
-            let time = ms(timeout - (Date.now() - -daily));
+            let time = ms(timeout - (Date.now() - daily));
             message.channel.send(`You've already collected your daily coins, come back in **${time.hours}h ${time.minutes}m ${time.seconds}s**`)
 
         } else {
