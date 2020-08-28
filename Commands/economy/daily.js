@@ -8,12 +8,12 @@ module.exports = {
     run: async (bot, message, args) => {
         let timeout = 86400000
         let amount = 10
-        let daily = await db.fetch(`daily_${message.author.id}`);
+        let daily = await db.fetch(`daily_${message.author.id}_${message.guild.id}`);
         let coins = await db.fetch(`coins_${message.author.id}_${message.guild.id}`)
         let newCoins = (coins + amount)
 
-        if (daily != null && timeout - (Date.now() - daily) > 0) {
-            let time = ms(timeout - (Date.now() - daily));
+        if (daily !== null && timeout - (Date.now() - daily) > 0) {
+            let time = ms(timeout - (Date.now() - -daily));
             message.channel.send(`You've already collected your daily coins, come back in **${time.hours}h ${time.minutes}m ${time.seconds}s**`)
 
         } else {
@@ -23,7 +23,7 @@ module.exports = {
             message.channel.send(embed)
 
             db.add(`coins_${message.author.id}_${message.guild.id}`, amount)
-            db.add(`daily_${message.author.id}`, Date.now())
+            db.set(`daily_${message.author.id}_${message.guild.id}`, Date.now())
         }
     }
 }
