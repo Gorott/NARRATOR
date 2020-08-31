@@ -21,7 +21,7 @@ module.exports = {
       message.member.setNickname('Not Very Lazy Spectatorzz');
     } else {
       message.member.roles.add("728078695025344514").catch(console.error);
-      message.member.setNickname('Not Very Lazy Spectatorzz');
+      message.member.setNickname('Sleepy Spectatorzz');
       message.delete()
     }
   }
