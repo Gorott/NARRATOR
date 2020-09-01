@@ -5,7 +5,7 @@ app.get("/", (request, response) => {
 })
 
 function keepAlive(){
-    app.listen(3000, ()=>{console.log("Server is Ready!")});
+    app.listen(4000, ()=>{console.log("Server is Ready!")});
 }
 
 const {Collection, Client, Discord} = require('discord.js');

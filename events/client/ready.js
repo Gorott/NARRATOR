@@ -12,7 +12,7 @@ module.exports = bot => {
  let bcount = "750164222415077417"
  
  setInterval(() => {
-   let mem = bot.guilds.cache.get("728031033949290636").members 
+   let mem = bot.guilds.cache.get("728031033949290636").members.cache
    bot.channels.cache.get(mcount).setName(`Members: ${mem.size}`)
    bot.channels.cache.get(ucount).setName(`Humans: ${mem.filter(x => !x.user.bot)}`)
    bot.channels.cache.get(bcount).setName(`Bots: ${mem.filter(x => !x.user.bot)}`)
