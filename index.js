@@ -1,13 +1,4 @@
-var express = require('express')
-var app = express();
-app.get("/", (request, response) => {
-  response.send('Hello World!');
-})
-
-function keepAlive(){
-    app.listen(4000, ()=>{console.log("Server is Ready!")});
-}
-
+require("dotenv").config()
 const {Collection, Client, Discord} = require('discord.js');
 const fs = require('fs');
 const bot = new Client({
@@ -24,5 +15,4 @@ bot.prefix = "=";
 ["command","event"].forEach(handler=>{
     require(`./handlers/${handler}`)(bot);
 });
-keepAlive();
 bot.login(process.env.token)
