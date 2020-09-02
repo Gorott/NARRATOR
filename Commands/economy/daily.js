@@ -6,7 +6,7 @@ module.exports = {
     name: "daily",
     description: "claim your daily coins",
     run: async (bot, message, args) => {
-        let timeout = 86400000
+        let timeout = 84600000 // 23 hours and 30 minutes
         let amount = 10
         let daily = await db.get(`daily_${message.author.id}_${message.guild.id}`);
         let coins = await db.get(`coins_${message.author.id}_${message.guild.id}`)
