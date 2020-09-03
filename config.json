@@ -1,4 +1,3 @@
 {
-    "prefix": "=", 
-    "mongoPath": "mongodb+srv://Groot:flapie123@cluster0.fhmib.mongodb.net/test" 
+    "prefix": "="
 }
