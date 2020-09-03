@@ -3,13 +3,12 @@ const {prefix}= require('../../config.json')
 module.exports = bot => {
  
  let status = db.fetch(`status`);
- if(status != ¨hosted¨) {
- bot.user.setActivity(´Werewolf Adventure with friends¨)}
-  const activities = ['Werewolf Adventure with friend bots', 'Werewolf Adventure alone ;-;']
-    setInterval(() => {
-      let activity = activities[Math.floor(Math.random() * activities.length)]
-      bot.user.setActivity(activity, { type: "PLAYING"})
-    }, 60000)
+ if(status != "hosted") {
+ bot.user.setActivity("Werewolf Adventure with friends")
+  } else {
+    (status != "ended") {
+      bot.user.setActivity("Werewolf Adventure alone ;-;")
+    }
  
  let mcount = "750164144908533801"
  let ucount = "750164188499935293"
