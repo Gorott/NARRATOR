@@ -1,6 +1,10 @@
 const {prefix}= require('../../config.json')
  
 module.exports = bot => {
+ 
+ let status = db.fetch(`status`);
+ if(status != ¨hosted¨) {
+ bot.user.setActivity(´Werewolf Adventure with friends¨)}
   const activities = ['Werewolf Adventure with friend bots', 'Werewolf Adventure alone ;-;']
     setInterval(() => {
       let activity = activities[Math.floor(Math.random() * activities.length)]
