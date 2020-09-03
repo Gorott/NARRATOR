@@ -1,4 +1,5 @@
 const {prefix}= require('../../config.json')
+const db = require("quick.db")
  
 module.exports = bot => {
  
