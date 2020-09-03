@@ -3,7 +3,7 @@ const db = require('quick.db')
 module.exports = bot => {
  
  let status = db.fetch(`status`);
- if(status === "hosted" || "started") { 
+ if(status === "hosted") { 
  bot.user.setActivity("Werewolf Adventure with friends")
   } else { 
       bot.user.setActivity("Werewolf Adventure alone ;-;")
