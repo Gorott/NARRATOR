@@ -15,16 +15,20 @@ const Random =  "3️⃣";
     await msg.react(Classic);
     await msg.react(Random);
     
-    const reactions = await msg.awaitReactions(reaction => reaction.emoji.name === Sandbox  || reaction.emoji.name === Classic || reaction.emoji.name === Random, {time: 15000});
-    message.channel.send('Voting Complete!')
+    const reactions = await msg.awaitReactions(reaction => reaction.emoji.name === Sandbox  || reaction.emoji.name === Classic || reaction.emoji.name === Random, {time: 15000}).then(collected => {
+      const reaction = collected.first();
+      
+      if(reaction.emoji.name ==️= 1️⃣){
+        message.reply('Roles for Sandbox mode have been given out!')
+      }
+      if(reaction.emoji.name === 2️⃣){
+        message.reply('Roles for Classic mode jave been given out!')
+      }
+      if(reaction.emoji.name === 3️⃣){
+        message.reply('What roles do you want to use for Random mode?')
+      }
+    })
     
-    let cSandbox = reactions.get(Sandbox).count-1
-    console.log(cSandbox)
-    let cClassic = reactions.get(Classic).count-1
-    console.log(cClassic)
-    let cRandom = reactions.get(Random).count-1
-    console.log(cRandom)
-    let result = Math.max(cSandbox, cClassic, cRandom)
-    console.loy(result)
+    
   }
 }
