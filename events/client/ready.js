@@ -1,14 +1,15 @@
 const {prefix}= require('../../config.json')
 const db = require('quick.db') 
 module.exports = bot => {
- 
+ setinterval(() => {
  let status = db.fetch(`status`);
  if(status === "hosted") { 
  bot.user.setActivity("Werewolf Adventure with friends")
   } else { 
       bot.user.setActivity("Werewolf Adventure alone ;-;")
     }
-  }
+    }, 10000)
+}
  let mcount = "750164144908533801"
  let ucount = "750164188499935293"
  let bcount = "750164222415077417"
