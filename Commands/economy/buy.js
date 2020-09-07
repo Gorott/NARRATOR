@@ -49,9 +49,9 @@ module.exports = {
       
       if(args[0] === "channel") {
         if(user < 2000) {
-          message.reply('You do not have enough money to buy this item!')
+          message.reply('You do not have enough myuoney to buy this item!')
         } else {
-          let items = db.fetch(message.author
+          let items = db.fetch(message.author.
           id, { items: [] })
           db.push(message.author.id, "- Channel")
           message.channel.senf("You've successfully bought a Channel make sure to ping a Manager+ to create it for you")
