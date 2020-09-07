@@ -1,7 +1,7 @@
 const {prefix}= require('../../config.json')
 const db = require('quick.db') 
 module.exports = bot => {
- setinterval(() => {
+ setInterval(() => {
  let status = db.fetch(`status`);
  if(status === "hosted") { 
  bot.user.setActivity("Werewolf Adventure with friends")
