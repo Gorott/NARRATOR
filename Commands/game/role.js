@@ -58,7 +58,7 @@ case playerrole == 16:
 rolelist = ["aura seer", "medium", "jailer", "werewolf", "docotor", "alpha werewolf", "seer", "headhunter", "bodygaurd", "gunner", "shaman werewolf", "aura seer", "serial killer", "priest", "wolf seer", "seer"]
 break;
 default:
-return;
+message.channel.send("Not enough people")
 }
 let roles = shuffle(rolelist);
 let i;
