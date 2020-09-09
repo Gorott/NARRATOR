@@ -22,40 +22,40 @@ module.exports = {
         let rolelist = ["aura seer", "medium", "jailer", "werewolf"]
         break;
       case 5:
-        let rolelist = ["aura seer", "medium", "jailer", "werewolf", "docotor"]
+        rolelist = ["aura seer", "medium", "jailer", "werewolf", "docotor"]
         break;
       case 6:
-        let rolelist = ["aura seer", "medium", "jailer", "werewolf", "doctor", "alpha werewolf"]
+        rolelist = ["aura seer", "medium", "jailer", "werewolf", "doctor", "alpha werewolf"]
         break;
       case 7: 
-        let rolelist = ["aura seer", "medium", "jailer", "werewolf", "doctor", "alpha werewolf", "seer"]
+        rolelist = ["aura seer", "medium", "jailer", "werewolf", "doctor", "alpha werewolf", "seer"]
         break;
       case 8:
-        let rolelist = ["aura seer", "medium", "jailer", "werewolf", "docotor", "alpha werewolf", "seer", "fool", "headhunter"]
+        rolelist = ["aura seer", "medium", "jailer", "werewolf", "docotor", "alpha werewolf", "seer", "fool", "headhunter"]
         break;
       case 9:
-        let rolelist = ["aura seer", "medium", "jailer", "werewolf", "docotor", "alpha werewolf", "seer", "headhunter", "bodygaurd"]
+       rolelist = ["aura seer", "medium", "jailer", "werewolf", "docotor", "alpha werewolf", "seer", "headhunter", "bodygaurd"]
         break;
       case 10:
-        let rolelist = ["aura seer", "medium", "jailer", "werewolf", "docotor", "alpha werewolf", "seer", "fool", "bodygaurd", "gunner"]
+        rolelist = ["aura seer", "medium", "jailer", "werewolf", "docotor", "alpha werewolf", "seer", "fool", "bodygaurd", "gunner"]
         break;
       case 11: 
-        let rolelist = ["aura seer", "medium", "jailer", "werewolf", "docotor", "alpha werewolf", "seer", "headhunter", "bodygaurd", "gunner", "Shaman Werewolf"]
+        rolelist = ["aura seer", "medium", "jailer", "werewolf", "docotor", "alpha werewolf", "seer", "headhunter", "bodygaurd", "gunner", "Shaman Werewolf"]
         break;
       case 12:
-         let rolelist = ["aura seer", "medium", "jailer", "werewolf", "docotor", "alpha werewolf", "seer", "headhunter", "bodygaurd", "gunner", "shaman werewolf", "aura seer"]
+         rolelist = ["aura seer", "medium", "jailer", "werewolf", "docotor", "alpha werewolf", "seer", "headhunter", "bodygaurd", "gunner", "shaman werewolf", "aura seer"]
          break;
       case 13:
-        let rolelist = ["aura seer", "medium", "jailer", "werewolf", "docotor", "alpha werewolf", "seer", "headhunter", "bodygaurd", "gunner", "shaman werewolf", "aura seer", "serial killer"]
+        rolelist = ["aura seer", "medium", "jailer", "werewolf", "docotor", "alpha werewolf", "seer", "headhunter", "bodygaurd", "gunner", "shaman werewolf", "aura seer", "serial killer"]
         break;
       case 14:
-        let rolelist = ["aura seer", "medium", "jailer", "werewolf", "docotor", "alpha werewolf", "seer", "headhunter", "bodygaurd", "gunner", "shaman werewolf", "aura seer", "serial killer", "priest"]
+        rolelist = ["aura seer", "medium", "jailer", "werewolf", "docotor", "alpha werewolf", "seer", "headhunter", "bodygaurd", "gunner", "shaman werewolf", "aura seer", "serial killer", "priest"]
         break;
       case 15:
-        let rolelist = ["aura seer", "medium", "jailer", "werewolf", "docotor", "alpha werewolf", "seer", "headhunter", "bodygaurd", "gunner", "shaman werewolf", "aura seer", "serial killer", "priest", "wolf seer"]
+        rolelist = ["aura seer", "medium", "jailer", "werewolf", "docotor", "alpha werewolf", "seer", "headhunter", "bodygaurd", "gunner", "shaman werewolf", "aura seer", "serial killer", "priest", "wolf seer"]
         break;
       case 16:
-        let rolelist = ["aura seer", "medium", "jailer", "werewolf", "docotor", "alpha werewolf", "seer", "headhunter", "bodygaurd", "gunner", "shaman werewolf", "aura seer", "serial killer", "priest", "wolf seer", "seer"]
+        rolelist = ["aura seer", "medium", "jailer", "werewolf", "docotor", "alpha werewolf", "seer", "headhunter", "bodygaurd", "gunner", "shaman werewolf", "aura seer", "serial killer", "priest", "wolf seer", "seer"]
         break;
     }
     let roles = shuffle(rolelist);
