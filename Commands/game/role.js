@@ -1,7 +1,24 @@
 const Discord = require('discord.js');
 const db = require('quick.db');
 const shuffle = require('shuffle-array');
-
+const rolelist = [
+	'aura seer',
+	'medium',
+	'jailer',
+	'werewolf',
+	'docotor',
+	'alpha werewolf',
+	'seer',
+	'headhunter',
+	'bodygaurd',
+	'gunner',
+	'shaman werewolf',
+	'aura seer',
+	'serial killer',
+	'priest',
+	'wolf seer',
+	'seer'
+]
 module.exports = {
 	name: 'role',
 	description: 'to give out roles',
@@ -14,185 +31,11 @@ module.exports = {
 		///A game cannot start with less than 4 players.
 		if (playerrole.size < 4) {
 			return message.channel.send(
-				`<@${message.author.id}, there are less than 4 players...`
+				`<@${message.author.id}>, there are less than 4 players...`
 			);
 		}
-		switch (true) {
-			case playerrole == 4:
-				let rolelist = ['aura seer', 'medium', 'jailer', 'werewolf'];
-				break;
-			case playerrole == 5:
-				rolelist = ['aura seer', 'medium', 'jailer', 'werewolf', 'docotor'];
-				break;
-			case playerrole == 6:
-				rolelist = [
-					'aura seer',
-					'medium',
-					'jailer',
-					'werewolf',
-					'doctor',
-					'alpha werewolf'
-				];
-				break;
-			case playerrole == 7:
-				rolelist = [
-					'aura seer',
-					'medium',
-					'jailer',
-					'werewolf',
-					'doctor',
-					'alpha werewolf',
-					'seer'
-				];
-				break;
-			case playerrole == 8:
-				rolelist = [
-					'aura seer',
-					'medium',
-					'jailer',
-					'werewolf',
-					'docotor',
-					'alpha werewolf',
-					'seer',
-					'fool',
-					'headhunter'
-				];
-				break;
-			case playerrole == 9:
-				rolelist = [
-					'aura seer',
-					'medium',
-					'jailer',
-					'werewolf',
-					'docotor',
-					'alpha werewolf',
-					'seer',
-					'headhunter',
-					'bodygaurd'
-				];
-				break;
-			case playerrole == 10:
-				rolelist = [
-					'aura seer',
-					'medium',
-					'jailer',
-					'werewolf',
-					'docotor',
-					'alpha werewolf',
-					'seer',
-					'fool',
-					'bodygaurd',
-					'gunner'
-				];
-				break;
-			case playerrole == 11:
-				rolelist = [
-					'aura seer',
-					'medium',
-					'jailer',
-					'werewolf',
-					'docotor',
-					'alpha werewolf',
-					'seer',
-					'headhunter',
-					'bodygaurd',
-					'gunner',
-					'Shaman Werewolf'
-				];
-				break;
-			case playerrole == 12:
-				rolelist = [
-					'aura seer',
-					'medium',
-					'jailer',
-					'werewolf',
-					'docotor',
-					'alpha werewolf',
-					'seer',
-					'headhunter',
-					'bodygaurd',
-					'gunner',
-					'shaman werewolf',
-					'aura seer'
-				];
-				break;
-			case playerrole == 13:
-				rolelist = [
-					'aura seer',
-					'medium',
-					'jailer',
-					'werewolf',
-					'docotor',
-					'alpha werewolf',
-					'seer',
-					'headhunter',
-					'bodygaurd',
-					'gunner',
-					'shaman werewolf',
-					'aura seer',
-					'serial killer'
-				];
-				break;
-			case playerrole == 14:
-				rolelist = [
-					'aura seer',
-					'medium',
-					'jailer',
-					'werewolf',
-					'docotor',
-					'alpha werewolf',
-					'seer',
-					'headhunter',
-					'bodygaurd',
-					'gunner',
-					'shaman werewolf',
-					'aura seer',
-					'serial killer',
-					'priest'
-				];
-				break;
-			case playerrole == 15:
-				rolelist = [
-					'aura seer',
-					'medium',
-					'jailer',
-					'werewolf',
-					'docotor',
-					'alpha werewolf',
-					'seer',
-					'headhunter',
-					'bodygaurd',
-					'gunner',
-					'shaman werewolf',
-					'aura seer',
-					'serial killer',
-					'priest',
-					'wolf seer'
-				];
-				break;
-			case playerrole == 16:
-				rolelist = [
-					'aura seer',
-					'medium',
-					'jailer',
-					'werewolf',
-					'docotor',
-					'alpha werewolf',
-					'seer',
-					'headhunter',
-					'bodygaurd',
-					'gunner',
-					'shaman werewolf',
-					'aura seer',
-					'serial killer',
-					'priest',
-					'wolf seer',
-					'seer'
-				];
-				break;
-			default:
-				message.channel.send('Not enough people');
-		}
+		if(playerrole !== rolelist.length) return rolelist.slice(0, playerrole);
+		return rolelist;
 		let roles = shuffle(rolelist);
 		let i;
 		for (i = 0; i < roles.length; i++) {
