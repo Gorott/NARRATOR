@@ -1,29 +1,31 @@
 const Discord = require('discord.js');
 const db = require('quick.db');
 const shuffle = require('shuffle-array');
-const rolelist = [
-	'aura seer',
-	'medium',
-	'jailer',
-	'werewolf',
-	'docotor',
-	'alpha werewolf',
-	'seer',
-	'headhunter',
-	'bodygaurd',
-	'gunner',
-	'shaman werewolf',
-	'aura seer',
-	'serial killer',
-	'priest',
-	'wolf seer',
-	'seer'
-]
+
 module.exports = {
 	name: 'role',
 	description: 'to give out roles',
 	catgory: 'game',
 	run: async (bot, message, args) => {
+		const rolelist = [
+			'aura seer',
+			'medium',
+			'jailer',
+			'werewolf',
+			'doctor',
+			'alpha werewolf',
+			'seer',
+			'headhunter',
+			'bodygaurd',
+			'gunner',
+			'shaman werewolf',
+			'aura seer',
+			'serial killer',
+			'priest',
+			'wolf seer',
+			'seer'
+		];
+
 		if (message.channel.id != '728215865048301628') return;
 		let playerrole = message.guild.roles.cache.get('728078042500431952')
 			.members;
@@ -34,15 +36,19 @@ module.exports = {
 				`<@${message.author.id}>, there are less than 4 players...`
 			);
 		}
-		if(playerrole !== rolelist.length) return rolelist.slice(0, playerrole);
-		return rolelist;
-		let roles = shuffle(rolelist);
+
+		if (playerrole !== rolelist.length) { 
+		rolelist.slice(0, playerrole);
+}
+		const roles = shuffle(rolelist, { copy: true });
+		console.log(roles);
 		let i;
 		for (i = 0; i < roles.length; i++) {
 			//For example, "role_1" would be "seer".
 			db.set(`role_${i + 1}`, roles[i]);
 		}
 		let priv_1 = message.guild.channels.cache.get('752865112553160716');
+		console.log (priv_1)
 		priv_1.send(`Your role is **${roles[0]}**.`);
 		let priv_2 = message.guild.channels.cache.get('729900330099146991');
 		priv_2.send(`Your role is **${roles[1]}**.`);
