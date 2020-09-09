@@ -10,18 +10,42 @@ module.exports = {
     if (message.channel.id != "729900329944088600") return;
     let playerrole = message.guild.roles.cache.get("729900329659007074")
       .members;
-    if (playerrole.size != args.length) {
-      return message.channel.send(
-        `<@${message.author.id}> you gave ${args.length} roles for ${playerrole.size} players...`
-      );
-    }
+    
     ///A game cannot start with less than 4 players.
     if (playerrole.size < 4) {
       return message.channel.send(
         `<@${message.author.id}, there are less than 4 players...`
       );
     }
-    let roles = shuffle(args);
+    switch(playerrole) {
+      case 4:
+        let rolelist = ["aura seer", "medium", "jailer", "werewolf"];
+      case 5:
+        let rolelist = ["aura seer", "medium", "jailer", "werewolf", "docotor"];
+      case 6:
+        let rolelist = ["aura seer", "medium", "jailer", "werewolf", "doctor", "alpha werewolf"];
+      case 7: 
+        let rolelist = ["aura seer", "medium", "jailer", "werewolf", "doctor", "alpha werewolf", "seer"];
+      case 8:
+        let rolelist = ["aura seer", "medium", "jailer", "werewolf", "docotor", "alpha werewolf", "seer", "fool", "headhunter"];
+      case 9:
+        let rolelist = ["aura seer", "medium", "jailer", "werewolf", "docotor", "alpha werewolf", "seer", "headhunter", "bodygaurd"];
+      case 10:
+        let rolelist = ["aura seer", "medium", "jailer", "werewolf", "docotor", "alpha werewolf", "seer", "fool", "bodygaurd", "gunner"];
+      case 11: 
+        let rolelist = ["aura seer", "medium", "jailer", "werewolf", "docotor", "alpha werewolf", "seer", "headhunter", "bodygaurd", "gunner", "Shaman Werewolf"];
+      case 12:
+         let rolelist = ["aura seer", "medium", "jailer", "werewolf", "docotor", "alpha werewolf", "seer", "headhunter", "bodygaurd", "gunner", "shaman werewolf", "aura seer"];
+      case 13:
+        let rolelist = ["aura seer", "medium", "jailer", "werewolf", "docotor", "alpha werewolf", "seer", "headhunter", "bodygaurd", "gunner", "shaman werewolf", "aura seer", "serial killer"];
+      case 14:
+        let rolelist = ["aura seer", "medium", "jailer", "werewolf", "docotor", "alpha werewolf", "seer", "headhunter", "bodygaurd", "gunner", "shaman werewolf", "aura seer", "serial killer", "priest"];
+      case 15:
+        let rolelist = ["aura seer", "medium", "jailer", "werewolf", "docotor", "alpha werewolf", "seer", "headhunter", "bodygaurd", "gunner", "shaman werewolf", "aura seer", "serial killer", "priest", "wolf seer"];
+      case 16:
+        let rolelist = ["aura seer", "medium", "jailer", "werewolf", "docotor", "alpha werewolf", "seer", "headhunter", "bodygaurd", "gunner", "shaman werewolf", "aura seer", "serial killer", "priest", "wolf seer", "seer"];
+    }
+    let roles = shuffle(rolelist);
     let i;
     for (i = 0; i < roles.length; i++) {
       //For example, "role_1" would be "seer".
@@ -105,5 +129,7 @@ module.exports = {
         `<@${message.author.id}>, roles have been given out.`
       );
     }
+    
+
   }
 };
