@@ -7,7 +7,7 @@ module.exports = {
 	description: 'to give out roles',
 	catgory: 'game',
 	run: async (bot, message, args) => {
-		const rolelist = [
+		let rolelist = [
 			'aura seer',
 			'medium',
 			'jailer',
@@ -36,11 +36,181 @@ module.exports = {
 				`<@${message.author.id}>, there are less than 4 players...`
 			);
 		}
-
-		if (playerrole !== rolelist.length) { 
-		rolelist.slice(0, playerrole);
-}
-		const roles = shuffle(rolelist, { copy: true });
+		switch (playerrole.size) {
+			case 4:
+				rolelist = ['aura seer', 'medium', 'jailer', 'werewolf'];
+				break;
+			case 5:
+				rolelist = ['aura seer', 'medium', 'jailer', 'werewolf', 'docotor'];
+				break;
+			case 6:
+				rolelist = [
+					'aura seer',
+					'medium',
+					'jailer',
+					'werewolf',
+					'doctor',
+					'alpha werewolf'
+				];
+				break;
+			case 7:
+				rolelist = [
+					'aura seer',
+					'medium',
+					'jailer',
+					'werewolf',
+					'doctor',
+					'alpha werewolf',
+					'seer'
+				];
+				break;
+			case 8:
+				rolelist = [
+					'aura seer',
+					'medium',
+					'jailer',
+					'werewolf',
+					'docotor',
+					'alpha werewolf',
+					'seer',
+					'fool',
+					'headhunter'
+				];
+				break;
+			case 9:
+				rolelist = [
+					'aura seer',
+					'medium',
+					'jailer',
+					'werewolf',
+					'docotor',
+					'alpha werewolf',
+					'seer',
+					'headhunter',
+					'bodygaurd'
+				];
+				break;
+			case 10:
+				rolelist = [
+					'aura seer',
+					'medium',
+					'jailer',
+					'werewolf',
+					'docotor',
+					'alpha werewolf',
+					'seer',
+					'fool',
+					'bodygaurd',
+					'gunner'
+				];
+				break;
+			case 11:
+				rolelist = [
+					'aura seer',
+					'medium',
+					'jailer',
+					'werewolf',
+					'docotor',
+					'alpha werewolf',
+					'seer',
+					'headhunter',
+					'bodygaurd',
+					'gunner',
+					'Shaman Werewolf'
+				];
+				break;
+			case 12:
+				rolelist = [
+					'aura seer',
+					'medium',
+					'jailer',
+					'werewolf',
+					'docotor',
+					'alpha werewolf',
+					'seer',
+					'headhunter',
+					'bodygaurd',
+					'gunner',
+					'shaman werewolf',
+					'aura seer'
+				];
+				break;
+			case 13:
+				rolelist = [
+					'aura seer',
+					'medium',
+					'jailer',
+					'werewolf',
+					'docotor',
+					'alpha werewolf',
+					'seer',
+					'headhunter',
+					'bodygaurd',
+					'gunner',
+					'shaman werewolf',
+					'aura seer',
+					'serial killer'
+				];
+				break;
+			case 14:
+				rolelist = [
+					'aura seer',
+					'medium',
+					'jailer',
+					'werewolf',
+					'docotor',
+					'alpha werewolf',
+					'seer',
+					'headhunter',
+					'bodygaurd',
+					'gunner',
+					'shaman werewolf',
+					'aura seer',
+					'serial killer',
+					'priest'
+				];
+				break;
+			case 15:
+				rolelist = [
+					'aura seer',
+					'medium',
+					'jailer',
+					'werewolf',
+					'docotor',
+					'alpha werewolf',
+					'seer',
+					'headhunter',
+					'bodygaurd',
+					'gunner',
+					'shaman werewolf',
+					'aura seer',
+					'serial killer',
+					'priest',
+					'wolf seer'
+				];
+				break;
+			case 16:
+				rolelist = [
+					'aura seer',
+					'medium',
+					'jailer',
+					'werewolf',
+					'docotor',
+					'alpha werewolf',
+					'seer',
+					'headhunter',
+					'bodygaurd',
+					'gunner',
+					'shaman werewolf',
+					'aura seer',
+					'serial killer',
+					'priest',
+					'wolf seer',
+					'seer'
+				];
+				break;
+		}
+		const roles = shuffle(rolelist);
 		console.log(roles);
 		let i;
 		for (i = 0; i < roles.length; i++) {
@@ -48,7 +218,6 @@ module.exports = {
 			db.set(`role_${i + 1}`, roles[i]);
 		}
 		let priv_1 = message.guild.channels.cache.get('752865112553160716');
-		console.log (priv_1)
 		priv_1.send(`Your role is **${roles[0]}**.`);
 		let priv_2 = message.guild.channels.cache.get('728085762062418000');
 		priv_2.send(`Your role is **${roles[1]}**.`);

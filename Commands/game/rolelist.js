@@ -8,8 +8,8 @@ module.exports = {
   description: "check the rolelist",
   category: "game",
   run: async ( bot, message, args) => {
-    const role1 = db.fetch(`role_${i + 1}`, roles[i])
-    const role2 = db.fetch(`role_${i + 1}`, roles[i])
+    const role1 = db.fetch(`role_${i + 1}`, roles[0])
+    const role2 = db.fetch(`role_${i + 1}`, roles[1])
     const role3 = db.fetch(`role_${i + 1}`, roles[2])
     const role4 = db.fetch(`role_${i + 1}`, roles[3])
     const role5 = db.fetch(`role_${i + 1}`, roles[4])
