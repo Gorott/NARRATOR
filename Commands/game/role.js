@@ -42,7 +42,7 @@ module.exports = {
 			//For example, "role_1" would be "seer".
 			db.set(`role_${i + 1}`, roles[i]);
 		}
-		let priv_1 = message.guild.channels.cache.get('729900330099146990');
+		let priv_1 = message.guild.channels.cache.get('752865112553160716');
 		priv_1.send(`Your role is **${roles[0]}**.`);
 		let priv_2 = message.guild.channels.cache.get('729900330099146991');
 		priv_2.send(`Your role is **${roles[1]}**.`);
