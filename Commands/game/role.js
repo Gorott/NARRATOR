@@ -7,7 +7,7 @@ name: "role",
 description: "to give out roles",
 catgory: "game",
 run: async (bot, message, args) => {
-if (message.channel.id != "729900329944088600") return;
+if (message.channel.id != "728215865048301628")
 let playerrole = message.guild.roles.cache.get("729900329659007074")
 .members;
 
