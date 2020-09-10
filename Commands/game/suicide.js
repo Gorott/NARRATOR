@@ -1,7 +1,7 @@
 const db = require('quick.db')
 const role = require('./role.js')
 const i = require('./role.js')
-f
+
 const discord = require('discord.js')
 const { priv_1, priv_2, priv_3, priv_4, priv_5, priv_6, priv_7, priv_8, priv_9, priv_10, priv_11, priv_12 } = require('./role.js')
 module.exports = {
@@ -10,7 +10,9 @@ module.exports = {
   category: "game",
   run: async (bot, message, args) => {
     db.fetch(`role_${i + 1}`, roles[i])
-    if (!message.member.roles.cache.has('728076283724169266')) {
+    let Alive = message.member.roles.cache.has('728076283724169266')
+    console.log(Alive)
+    if (!Alive) {
       message.channel.send("Congratulations, you did suicide while you aren't even alive!")
     }
     message.member.roles.remove('728076283724169266')
