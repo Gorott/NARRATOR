@@ -30,7 +30,7 @@ module.exports = {
     }
 
     message.member.setNickname(playernumber);
-    db.set(`joined_${message.author.id}`, playernumber)for
+    db.set(`joined_${message.author.id}`, playernumber)
     let role = message.guild.roles.cache.find(r => r.name === `${playernumber}`);
     message.member.roles.add(role);
     message.delete()
