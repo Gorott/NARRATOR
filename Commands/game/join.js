@@ -9,7 +9,9 @@ module.exports = {
     let status = db.fetch(`status`);
     if (status != "hosted") return;
     if (message.guild.id != "728065941459435573") return;
-    if (message.member.roles.cache.has("728078695025344514")) {
+    let Alive = message.member.roles.cache.has("728078695025344514")
+    console.log
+    if (Alive) {
       message.member.roles.remove("728078695025344514").catch(console.error);
       message.member.roles.add("728078042500431952").catch(console.error);
       message.member.roles.add("728076283724169266").catch(console.error);
