@@ -1,7 +1,6 @@
 const db = require('quick.db')
 const role = require('./role.js')
 const i = require('./role.js')
-for (i = 0; i < roles.length; i++) {
 const discord = require('discord.js')
 const { priv_1, priv_2, priv_3, priv_4, priv_5, priv_6, priv_7, priv_8, priv_9, priv_10, priv_11, priv_12 } = require('./role.js')
 module.exports = {
@@ -19,4 +18,4 @@ module.exports = {
     let daychat = message.guild.channels.cache.get('728082143661785150')
     daychat.send(`<@${message.author.id}> did suicide`)
   }
-}
+};
