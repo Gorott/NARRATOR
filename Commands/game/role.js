@@ -33,7 +33,7 @@ module.exports = {
 		///A game cannot start with less than 4 players.
 		if (playerrole.size < 4) {
 			return message.channel.send(
-				`<@${message.author.id}>, there are less than 4 players...`
+				`<@${message.author.id}>, there are 4 people in the Alive role. Make sure all your players are ready and have their number role and the Alive role`
 			);
 		}
 		rolelist = rolelist.slice(0, playerrole.size)
