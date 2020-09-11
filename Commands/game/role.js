@@ -26,8 +26,8 @@ module.exports = {
 			'seer'
 		];
 
-		if (message.channel.id != '728215865048301628') return;
-		let playerrole = message.guild.roles.cache.get('728078042500431952')
+		if (message.channel.name != "narrator-commands") return;
+		let playerrole = message.guild.roles.cache.find(x => x.name === "Alive")
 			.members;
 
 		///A game cannot start with less than 4 players.
