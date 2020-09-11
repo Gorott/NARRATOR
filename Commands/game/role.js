@@ -43,7 +43,7 @@ module.exports = {
 		for (i = 0; i < roles.length; i++) {
 			//For example, "role_1" would be "seer".
 			db.set(`role_${i + 1}`, roles[i]);
-			let chan = message.guild.channels.cache.find(x => x.name === `${i}`)
+			let chan = message.guild.channels.cache.find(x => x.name === `${i + 1}`)
 			chan.send(`Your role is **${roles[0].replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase())}**.`);
 		}
 		return message.channel.send(
