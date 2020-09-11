@@ -15,5 +15,6 @@ module.exports = {
     let channels = message.mentions.channels
     if(!channels.array().length) return message.channel.send("Please specify channels to clear!")
     channels.forEach(c => c.bulkDelete(number))
+    message.react("✅")
   }
 };

@@ -1,5 +1,6 @@
 dependencies:
   array-pull: 0.2.1
+  array-shuffle: 1.0.1
   ascii-table: 0.0.9
   discord.js: 12.3.1
   dotenv: 8.2.0
@@ -80,6 +81,12 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-52jDVNnPFLPiskM5QkVrMGRie2A=
+  /array-shuffle/1.0.1:
+    dev: false
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha1-fqSIKjVrS8pfVF4LblLq9tlxVXo=
   /array-slice/0.2.3:
     dev: false
     engines:
@@ -1017,6 +1024,7 @@ packages:
       integrity: sha512-a4UGQaWPH59mOXUYnAG2ewncQS4i4F43Tv3JoAM+s2VDAmS9NsK8GpDMLrCHPksFT7h3K6TOoUNn2pb7RoXx4g==
 specifiers:
   array-pull: ^0.2.1
+  array-shuffle: ^1.0.1
   ascii-table: 0.0.9
   discord.js: ^12.3.1
   dotenv: ^8.2.0
