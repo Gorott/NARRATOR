@@ -14,7 +14,7 @@ module.exports = {
     let Alive = message.member.roles.cache.has('728076283724169266')
     console.log(Alive)
     if (!Alive) {
-      message.channel.send("Congratulations, you did suicide while you aren't even alive!")
+      return message.channel.send("Congratulations, you did suicide while you aren't even alive!")
     }
     message.member.roles.remove('728076283724169266')
     message.member.roles.add('728077261085081660')
