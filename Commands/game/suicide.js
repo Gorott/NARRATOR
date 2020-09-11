@@ -25,16 +25,18 @@ module.exports = {
 	run: async (bot, message, args) => {
 		db.fetch(`role_${i + 1}`, roles[i]);
 		let Alive = message.member.roles.cache.has('728076283724169266');
-		let Dead = message.member.roles.cache.has('728077261085081660')
+		let Dead = message.member.roles.cache.has('728077261085081660');
 
-		if (Alive) {
+		if (Dead) {
+			message.channel.send(
+				'Congratulations, you committed suicide while you are already dead.'
+			);
+		} else if (Alive) {
 			message.member.roles.remove('728076283724169266');
 			message.member.roles.add('728077261085081660');
 
 			let daychat = message.guild.channels.cache.get('728082143661785150');
 			daychat.send(`<@${message.author.id}> committed suicide`);
-		} else if (Dead){
-		  message.channel.send('Congratulations, you committed suicide while you are already dead.')
 		}
-	} 
+	}
 };
