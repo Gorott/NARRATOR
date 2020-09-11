@@ -27,7 +27,7 @@ module.exports = {
 		];
 
 		if (message.channel.name != "narrator-commands") return;
-		let playerrole = message.guild.roles.cache.find(x => x.name === "Players")
+		let playerrole = message.guild.roles.cache.find(x => x.name === "Alive")
 			.members;
 
 		///A game cannot start with less than 4 players.
