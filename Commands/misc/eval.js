@@ -8,7 +8,7 @@ module.exports = {
 	description: "Evaluate JavaScript code!",
   category: "misc",
 	run: async (bot, message, args) => {
-    if (!["544805979179712522", "439223656200273932"].includes(message.author.id))
+    if (!["544805979179712522", "439223656200273932", "584311318207660042"].includes(message.author.id))
       return undefined
     
     try {
