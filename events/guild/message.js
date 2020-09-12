@@ -1,5 +1,7 @@
 const {prefix}= require('../../config.json');
 const Discord= require('discord.js');
+const ms = require(`ms`)
+const Timeout = new Set();
 
 module.exports=async(bot,message)=>{
     if(message.author.bot) return;
@@ -14,7 +16,18 @@ module.exports=async(bot,message)=>{
     let command = bot.commands.get(cmd);
     if (!command) command = bot.commands.get(bot.aliases.get(cmd));
 
-    if(!command) return
+    if(command) {
+      if(command.timeout) {
+        if(Timeout.has(`${message.author.id}${command.name}`)){
+          return;
+        } else {
+          Timeout.add(`${message.author.id}${command.name}`)
+          setTimeout(() => {
+            Timeout.delete(`${message.author.id}${command.name}`)
+          }, command.timeout)
+        }
+      }
+    }
     
 try {
     await command.run(bot,message,args)
