@@ -1,22 +1,21 @@
-const db = require('quick.db')
-const { i, roles, seer } = require('../game/role.js')
-const Discord = require('discord.js')
+const db = require("quick.db");
+const { i, roles, seer } = require("../game/role.js");
+const Discord = require("discord.js");
 
 module.exports = {
   name: "check",
   description: "check someone",
   category: "role commands",
   run: async (bot, message, args) => {
-    const seercheck = db.fetch(`role_${message.member.nickname}`, seer)
-    const mention = message.mentions.users.first()
-    if (!seer) return message.channel.send('That person is... ')
-    if (seer) {
-      if (!mention) {
-        message.channel.send("You didn't mention a person!")
+    const seercheck = db.fetch(`role_${message.member.nickname}`);
+    if (seercheck === `seer` && args.length === 1) {
+      const user = message.guild.members.cache.find(
+        x => x.nickname === args[0]
+      );
+      if (user) {
+        const seerChecked = db.fetch(`role_${args[0]}`);
+        message.channel.send(`${args[0]} is ${seerChecked}`);
       }
-      const seerChecked = db.fetch(`role_${message.mentions.members.nickname}`, roles[i])
-      message.channel.send(`${mention.displayname} is ${seerChecked}`)
-
     }
   }
-}
+};
