@@ -6,25 +6,29 @@ module.exports = {
   description: "to join a game from the server",
   catgory: "game",
   run: async (bot, message, args) => {
-      let status = db.fetch(`status`);
-      let link = db.fetch(`link`)
-      if (status == "ended") {
-        return message.channel.send("That game already ended") 
-      }
-      if (message.guild.id != "728031033949290636") return;
-      if (message.channel.id != "728072732516024360") {
-          return message.channel.send(`<@${message.author.id}> Please use this command in <#728072732516024360>!`);
-      }
+    let status = db.fetch(`status`);
+    let link = db.fetch(`link`);
 
-      if (message.member.roles.cache.has("741097460486897664")) {
-          return message.channel.send("You already have the Game Joined role!");
-      }
+    if (message.guild.id != "728031033949290636") return;
+    if (message.channel.id != "728072732516024360") {
+      return message.channel.send(
+        `<@${message.author.id}> Please use this command in <#728072732516024360>!`
+      );
+    }
 
-      if (args[0] === link) {
-          message.member.roles.add("741097460486897664");
-          message.channel.send("You joined the game go to <#741098289847468082>")
-      } else {
-          message.channel.send("Please provide the correct gamecode.")
-      }
+    if (status == "ended") {
+      return message.channel.send("That game already ended");
+    }
+
+    if (message.member.roles.cache.has("741097460486897664")) {
+      return message.channel.send("You already have the Game Joined role!");
+    }
+
+    if (args[0] === link) {
+      message.member.roles.add("741097460486897664");
+      message.channel.send("You joined the game go to <#741098289847468082>");
+    } else {
+      message.channel.send("Please provide the correct gamecode.");
+    }
   }
-}
+};
