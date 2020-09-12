@@ -8,7 +8,7 @@ module.exports = {
 	catgory: 'game',
 	run: async (bot, message, args) => {
 		let rolelist = [
-			'aura seer',
+			'seer',
 			'medium',
 			'jailer',
 			'werewolf',
