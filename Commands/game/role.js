@@ -18,7 +18,7 @@ module.exports = {
 			'headhunter',
 			'bodygaurd',
 			'gunner',
-			'shaman werewolf',
+			'wolf shaman',
 			'aura seer',
 			'serial killer',
 			'priest',
