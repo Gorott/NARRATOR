@@ -8,9 +8,9 @@ module.exports = {
     const Embed = new MessageEmbed()
       .setTitle("🏓Pong!🏓")
       .setDescription(
-        ` Latency is ${Math.floor(
+        `Latency is ${Math.floor(
           msg.createdTimestamp - message.createdTimestamp
-        )}MS\n API Latency is ${Math.round(bot.ws.ping)}MS`
+        )}MS\nAPI Latency is ${Math.round(bot.ws.ping)}MS`
       )
       .setColor("RANDOM");
     msg.edit(" ", Embed);
