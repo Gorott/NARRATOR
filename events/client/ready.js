@@ -9,7 +9,7 @@ module.exports = bot => {
       bot.user.setActivity("Werewolf Adventure alone ;-;")
     }
     }, 10000)
-}
+
  let mcount = "750164144908533801"
  let ucount = "750164188499935293"
  let bcount = "750164222415077417"
@@ -21,5 +21,6 @@ module.exports = bot => {
    bot.channels.cache.get(bcount).setName(`Bots: ${mem.filter(x => x.user.bot).size}`)
  
  }, 300000) //5 minutes
+}
  
  
