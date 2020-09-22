@@ -31,6 +31,8 @@ module.exports = {
             return message.channel.send(
               `You cannot kill a player in the Werewolves team.`
             );
+          } else {
+            db.set(`killed_${args[0]}`, true);
           }
         }
       }
