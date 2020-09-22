@@ -33,6 +33,8 @@ module.exports = {
             );
           } else {
             db.set(`killed_${args[0]}`, true);
+            let c = message.guild.channels.cache.find(channel => channel.name === "werewolves-vote")
+            c.send(`${message.member.nickname} vote to kill ${args[0]}`)
           }
         }
       }
