@@ -16,8 +16,8 @@ bot.prefix = "=";
 ["command","event"].forEach(handler=>{
     require(`./handlers/${handler}`)(bot);
 });
-bot.login(process.env.token).then({
-    cmd.get('pwd', function(err, data, stderr){
-            console.log(`Bot is online, using commit ${data}`)
-        });
+bot.login(process.env.token).then(x => {
+    cmd.get('git rev-parse --short HEAD', function(err, data, stderr){
+        console.log(`Bot is online, using commit ${data}`)
+    });
 })
